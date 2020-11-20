@@ -8,7 +8,15 @@
     <title>Buraya Baslik</title>
 </head>
 <body>
-    <button type="submit"><a href="https://www.google.com">A</a></button>
-    <button type="submit">B</button>
+    <form action="#" method="post">
+        <input type="submit" name="s_btn" value="" id="x1" onclick="changeColor('x1')" >
+        <input type="submit" name="s_btn2" value="" id="x2">
+    </form>
 </body>
 </html>
+<script>
+    function changeColor(id){
+        document.getElementById(id).style.backgroundColor = "red";
+
+    }
+</script>

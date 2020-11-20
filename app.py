@@ -8,7 +8,7 @@ def home():
 
     if request.method == "POST":
         print("x")
-        return "butona basildi islemler..."
+        return redirect(url_for("home"))
 
     else:
         return render_template("basic.html")
