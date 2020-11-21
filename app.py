@@ -6,38 +6,38 @@ app.secret_key = "hello"
 @app.route("/", methods=["POST","GET"])
 def welcome():
 
-    return "Welcome screen... 3/7"
+    return render_template("welcome.html")
 
 
 @app.route("/menu", methods=["POST","GET"])
 def menu():
 
-    return "Menu page... 4/7"
+    return render_template("menu.html")
 
 @app.route("/example", methods=["POST","GET"])
 def example():
 
-    return "An example of a maze... 1/7"
+    return render_template("example.html")
 
 @app.route("/about", methods=["POST","GET"])
 def about():
 
-    return "About us... 2/7"
+    return render_template("about.html")
 
 @app.route("/contact", methods=["POST", "GET"])
 def contact():
 
-    return "To contact with us... 5/7"
+    return render_template("contact.html")
 
 @app.route("/game", methods=["POST","GET"])
 def game():
 
-    return "Playable game... 6/7"
+    return render_template("game.html")
 
 @app.route("/settings", methods=["POST","GET"])
 def settings():
 
-    return "Settings... 7/7"
+    return render_template("settings.html")
 
 if __name__ == '__main__':
     app.run()

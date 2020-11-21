@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;800&display=swap");
+
+* {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#welcome-body {
+  background-image: url("../images/welcome.jpg");
+  background-size: cover;
+}
+
+#welcome-heading {
+  text-align: center;
+  color: white;
+}
+
+#welcome-heading h1 {
+  font-size: 64px;
+  margin-top: 20%;
+}
+
+#welcome-button {
+  margin: 50px auto;
+  padding: 40px;
+  width: 50%;
+}
+
+.welcome-btn-start {
+  border: 5px solid #00a165;
+  border-radius: 30px;
+  width: 250px;
+  height: 60px;
+  background-color: white;
+  color: #00a165;
+  font-size: 24px;
+  font-weight: bold;
+  transition: background-color 0.75s, color 0.25s;
+}
+
+.welcome-btn-start:hover {
+  background-color: #00a165;
+  color: white;
+}
+
+.welcome-btn-start:focus {
+  background-color: #00a165;
+  color: white;
+  outline: 0;
+}
