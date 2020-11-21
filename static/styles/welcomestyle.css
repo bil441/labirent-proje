@@ -29,22 +29,18 @@
 }
 
 .welcome-btn-start {
-  border: none;
+  border: 1px solid #00a165;
   border-radius: 30px;
   width: 250px;
   height: 60px;
-  background-color: #00a165;
-  color: white;
+  background-color: white;
+  color: #00a165;
   font-size: 24px;
   font-weight: bold;
-}
-
-.welcome-btn-start {
-  background-color: #00a165;
-  color: white;
+  transition: background-color 0.75s, color 0.25s;
 }
 
 .welcome-btn-start:hover {
-  background-color: #00c375;
-
+  background-color: #00a165;
+  color: white;
 }

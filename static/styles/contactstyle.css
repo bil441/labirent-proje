@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;800&display=swap");
+
+* {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#contact-body {
+    background-image: url("../images/contact.JPG");
+    background-size: cover;
+}
+
+#about-container {
+    margin-top: 120px;
+    padding-top: 120px;
+    padding-bottom: 30px;
+}
+
+.text-container {
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px;
+    color: white;
+    padding-top: 120px;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+p {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.info-link{
+    text-decoration: none;
+    color: white;
+}
+
+.info-link:hover{
+    text-decoration: none;
+    color: #d4149e;
+}
+
+.button-1 {
+    margin-bottom: 10px;
+    margin-top: 100px;
+    border: 1px solid #d4149e;
+    border-radius: 30px;
+    width: 250px;
+    height: 60px;
+    background-color: white;
+    color: #d4149e;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.75s, color 0.25s;
+}
+
+.button-1:hover {
+    background-color: #d4149e;
+    color: white;
+}
+
+
