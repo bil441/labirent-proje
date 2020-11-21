@@ -46,6 +46,7 @@
 .blue-button:focus {
     background-color: #005ad5;
     color: white;
+    outline: 0;
 }
 
 .green-button {
@@ -65,5 +66,11 @@
 .green-button:hover {
     background-color: #00e4cb;
     color: white;
+}
+
+.green-button:focus {
+    background-color: #00e4cb;
+    color: white;
+    outline: 0;
 }
 

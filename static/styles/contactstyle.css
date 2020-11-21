@@ -67,4 +67,7 @@ p {
     color: white;
 }
 
+.button-1:focus {
+    outline: 0;
+}
 

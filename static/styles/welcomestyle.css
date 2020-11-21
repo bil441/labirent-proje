@@ -29,7 +29,7 @@
 }
 
 .welcome-btn-start {
-  border: 1px solid #00a165;
+  border: 5px solid #00a165;
   border-radius: 30px;
   width: 250px;
   height: 60px;
@@ -43,4 +43,10 @@
 .welcome-btn-start:hover {
   background-color: #00a165;
   color: white;
+}
+
+.welcome-btn-start:focus {
+  background-color: #00a165;
+  color: white;
+  outline: 0;
 }
