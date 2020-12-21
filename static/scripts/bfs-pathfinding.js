@@ -114,7 +114,7 @@ var exploreInDirection = function (currentLocation, direction, grid) {
 
 
 
-var size = 10;
+var size = 20;
 var grid = [];
 for (var i = 0; i < size; i++) {
     grid[i] = [];
@@ -124,13 +124,13 @@ for (var i = 0; i < size; i++) {
 }
 
 startPoints = [0,0];
-goalPoints = [2,3];
+goalPoints = [19,3];
 
 grid[startPoints[0]][startPoints[1]] = "Start";
 grid[goalPoints[0]][goalPoints[1]] = "Goal";
 
 grid[1][1] = "Wall";
-grid[1][2] = "Wall";
+grid[1][2] = "Lava";
 grid[1][3] = "Wall";
 grid[2][2] = "Wall";
 
