@@ -8,7 +8,7 @@ var findShortestPath = function (coordinates, grid) {
         top: top,
         left: left,
         path: [],
-        status: 'Start'
+        status: 'start'
     };
 
     //BASLANGIC NOKTASI
@@ -20,33 +20,33 @@ var findShortestPath = function (coordinates, grid) {
 
         // DOGUYA BAK
         var newLocation = exploreInDirection(currentLocation, 'East', grid);
-        if (newLocation.status === 'Goal') {
+        if (newLocation.status === 'goal') {
             return newLocation.path;
-        } else if (newLocation.status === 'Valid') {
+        } else if (newLocation.status === 'valid') {
             queue.push(newLocation);
         }
 
         // GUNEYE BAK
         var newLocation = exploreInDirection(currentLocation, 'South', grid);
-        if (newLocation.status === 'Goal') {
+        if (newLocation.status === 'goal') {
             return newLocation.path;
-        } else if (newLocation.status === 'Valid') {
+        } else if (newLocation.status === 'valid') {
             queue.push(newLocation);
         }
 
         // BATIYA BAK
         var newLocation = exploreInDirection(currentLocation, 'West', grid);
-        if (newLocation.status === 'Goal') {
+        if (newLocation.status === 'goal') {
             return newLocation.path;
-        } else if (newLocation.status === 'Valid') {
+        } else if (newLocation.status === 'valid') {
             queue.push(newLocation);
         }
 
         // KUZEYE BAK
         var newLocation = exploreInDirection(currentLocation, 'North', grid);
-        if (newLocation.status === 'Goal') {
+        if (newLocation.status === 'goal') {
             return newLocation.path;
-        } else if (newLocation.status === 'Valid') {
+        } else if (newLocation.status === 'valid') {
             queue.push(newLocation);
         }
     }
@@ -68,13 +68,13 @@ var locationStatus = function (location, grid) {
 
         // BOYLE BIR YER YOK
         return 'Invalid';
-    } else if (grid[dft][dfl] === 'Goal') {
-        return 'Goal';
-    } else if (grid[dft][dfl] !== 'Empty') {
+    } else if (grid[dft][dfl] === 'goal') {
+        return 'goal';
+    } else if (grid[dft][dfl] !== 'empty') {
         // DAHA ONCE GIDILDI YA DA ENGEL VAR
         return 'Blocked';
     } else {
-        return 'Valid';
+        return 'valid';
     }
 };
 
@@ -105,7 +105,7 @@ var exploreInDirection = function (currentLocation, direction, grid) {
     };
     newLocation.status = locationStatus(newLocation, grid);
     // ZIYARET ETTIGINI VISITED YAP
-    if (newLocation.status === 'Valid') {
+    if (newLocation.status === 'valid') {
         grid[newLocation.top][newLocation.left] = 'Visited';
     }
 
@@ -119,22 +119,22 @@ var grid = [];
 for (var i = 0; i < size; i++) {
     grid[i] = [];
     for (var j = 0; j < size; j++) {
-        grid[i][j] = 'Empty';
+        grid[i][j] = 'empty';
     }
 }
 
 startPoints = [0,0];
-goalPoints = [[19,3],[4,5],[2,1]];
+goalPoints = [[19,3],[4,5]];
 
-grid[startPoints[0]][startPoints[1]] = "Start";
+grid[startPoints[0]][startPoints[1]] = "start";
 
 for (var i=0; i<goalPoints.length; i++) {
-    grid[goalPoints[i][0]][goalPoints[i][1]] = "Goal";
+    grid[goalPoints[i][0]][goalPoints[i][1]] = "goal";
 }
 
-grid[1][1] = "Wall";
-grid[1][2] = "Lava";
-grid[1][3] = "Wall";
-grid[2][2] = "Wall";
+grid[1][1] = "wall";
+grid[1][2] = "lava";
+grid[1][3] = "wall";
+grid[2][2] = "wall";
 
 console.log(findShortestPath(startPoints, grid));
