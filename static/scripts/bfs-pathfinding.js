@@ -124,10 +124,13 @@ for (var i = 0; i < size; i++) {
 }
 
 startPoints = [0,0];
-goalPoints = [19,3];
+goalPoints = [[19,3],[4,5],[2,1]];
 
 grid[startPoints[0]][startPoints[1]] = "Start";
-grid[goalPoints[0]][goalPoints[1]] = "Goal";
+
+for (var i=0; i<goalPoints.length; i++) {
+    grid[goalPoints[i][0]][goalPoints[i][1]] = "Goal";
+}
 
 grid[1][1] = "Wall";
 grid[1][2] = "Lava";
