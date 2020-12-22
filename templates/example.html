@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon"
+          type="image/svg"
+          href="../static/images/favicon.svg">
+
+    <title>Example</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/styles/examplestyle.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body id="game-body">
+<div>
+    <div class="game-container split left ">
+        <div id="game" class="square ">
+            <div class="content">
+                <div id="medium" class="medium col">
+                    <div id="m-1" class="m-line row">
+                        <div id="m-1-1" class="m-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
+                        </div>
+                        <div id="m-1-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-1-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-1-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-1-5" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-6" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-7" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-8" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-9" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-10" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-11" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-13" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-14" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-15" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-1-17" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-1-18" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-1-19" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-1-20" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                    </div>
+                    <div id="m-2" class="m-line row">
+                        <div id="m-2-1" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-5" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-2-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-2-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-3" class="m-line row">
+                        <div id="m-3-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-3-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-5" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-3-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-3-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-4" class="m-line row">
+                        <div id="m-4-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-4-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-5" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-4-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-4-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-5" class="m-line row">
+                        <div id="m-5-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-5-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-5" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-5-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-9" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-5-10" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-5-11" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-5-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-5-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-5-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-6" class="m-line row">
+                        <div id="m-6-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-6-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-3" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-6-4" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-6-5" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-6-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-8" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-6-9" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-6-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-6-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-6-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-7" class="m-line row">
+                        <div id="m-7-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-7-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-3" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-7-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-8" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-7-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-7-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-15" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-7-16" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-7-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-18" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-7-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-7-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-8" class="m-line row">
+                        <div id="m-8-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-8-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-3" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-8-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-8" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-8-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-8-13" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-8-14" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-8-15" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-8-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-18" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-8-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-8-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-9" class="m-line row">
+                        <div id="m-9-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-9-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-3" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-9-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-6" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-9-7" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-9-8" class="m-sq col clickable"><i class="fas fa-fire" style="color: firebrick;"></i>
+                        </div>
+                        <div id="m-9-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-18" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-9-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-9-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-10" class="m-line row">
+                        <div id="m-10-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-10-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-4" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-6" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                       style="color: firebrick;"></i></div>
+                        <div id="m-10-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-10-18" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-10-19" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-10-20" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                    </div>
+                    <div id="m-11" class="m-line row">
+                        <div id="m-11-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-5" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-6" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-17" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-18" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-11-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-11-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-12" class="m-line row">
+                        <div id="m-12-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-12-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-12-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-12-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-12-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-13" class="m-line row">
+                        <div id="m-13-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-13-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-13-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-13-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-13-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-14" class="m-line row">
+                        <div id="m-14-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-14-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-14-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-14-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-14-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-15" class="m-line row">
+                        <div id="m-15-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-15-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-15-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-15-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-15-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-16" class="m-line row">
+                        <div id="m-16-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-16-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-16-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-16-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-16-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-17" class="m-line row">
+                        <div id="m-17-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-17-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-17-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-17-16" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-17-17" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-17-18" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-17-19" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-17-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-18" class="m-line row">
+                        <div id="m-18-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-18-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-18-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-18-19" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-18-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-19" class="m-line row">
+                        <div id="m-19-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-19-2" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-3" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-19-5" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-6" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-7" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-8" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-9" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-10" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-11" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-12" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-13" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-14" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-15" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-16" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-19-19" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-19-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="m-20" class="m-line row">
+                        <div id="m-20-1" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-2" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-3" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-4" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-5" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-6" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-7" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-8" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-9" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-10" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-11" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-12" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-13" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-14" class="m-sq col clickable"><i class="fas fa-bars" style="color: black;"></i>
+                        </div>
+                        <div id="m-20-15" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-20-16" class="m-sq col clickable"><i class="fas fa-fire"
+                                                                        style="color: firebrick;"></i></div>
+                        <div id="m-20-17" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-20-18" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-20-19" class="m-sq col clickable"><i class="fas "></i></div>
+                        <div id="m-20-20" class="m-sq col clickable"><i class="fas fa-star" style="color: gold;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="rest-container split right" style="margin-left: 20px">
+    <div class="options-container">
+        <div class="row m-2 " style="display: none" id="fm">
+            <p class="fail-message">Couldn't find any path to goal</p>
+        </div>
+        <div class="row m-2">
+            <button class="options-btn col-md-8 m-1" onclick="solve()">Show Solution</button>
+        </div>
+        <div class="row m-2">
+            <button class="options-btn col-md-8 m-1" onclick="location.href ='/menu'">Home</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    way = ["east", "south", "south", "south", "south", "south", "south", "south", "south", "south", "east", "east",
+        "east", "north", "north", "east", "east", "north", "north", "north", "east", "north", "east", "east", "east",
+        "east", "east", "east", "east", "east", "east", "south", "south", "south", "south", "south", "south",
+        "west", "west", "south", "south", "south", "south", "south", "south", "south", "south", "east", "east", "east",
+        "south", "south", "east", "east"];
+
+    function sleep(ms) {
+        return new Promise(resolver => setTimeout(resolver, ms));
+    }
+
+    async function solve() {
+        if (!way) {
+            for (let k = 1; k < 21; k++) {
+                for (let m = 1; m < 21; m++) {
+                    $(("#m-" + k + "-" + m)).css("background-color", "darkred");
+                    $(("#m-" + k + "-" + m)).find("i").css("color", "white");
+                    await sleep(5);
+                }
+            }
+            $("#fm").css("display", "block");
+
+        } else {
+            let index = [1, 1];
+            let curr = $("#m-1-1");
+            curr.addClass("true-way");
+            for (let i = 0; i < way.length; i++) {
+                if (way[i] === "east") {
+                    index = [index[0], index[1] + 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "west") {
+                    index = [index[0], index[1] - 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "north") {
+                    index = [index[0] - 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else {
+                    index = [index[0] + 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                }
+                await sleep(300);
+            }
+        }
+    }
+</script>
+</body>
+</html>
