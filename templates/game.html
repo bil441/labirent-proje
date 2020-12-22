@@ -492,11 +492,18 @@
         </div>
     </div>
     <div class="options-container">
-        <div class="row m-2">
-            <button class="options-btn col-md-8 m-1">Start Solver</button>
+        <div class="row m-2 " style="display: none" id="fm">
+            <p class="fail-message">Couldn't find any path to goal</p>
         </div>
         <div class="row m-2">
-            <button class="options-btn col-md-8 m-1">New Maze</button>
+            <button class="options-btn col-md-8 m-1" onclick="showHide()">Start Solver</button>
+        </div>
+        <div id="solver" style="display: none" class="row m-2">
+            <button class="options-btn-2 m-1">BFS</button>
+            <button class="options-btn-2 m-1">A*</button>
+        </div>
+        <div class="row m-2">
+            <button class="options-btn col-md-8 m-1" onclick="setValues()">New Maze</button>
         </div>
         <div class="row m-2">
             <button class="options-btn col-md-8 m-1" onclick="location.href ='/menu'">Home</button>
@@ -504,10 +511,20 @@
     </div>
 </div>
 <script>
+    function showHide() {
+        let x = document.getElementById("solver");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+<script>
     var pos = [[0, 0], [0, 0], [0, 0]];
     $(".clickable").click(function () {
         var radioValue = $("input[name='block']:checked").val();
-        var c = $(this).find("i");
+        let c = $(this).find("i");
         if (radioValue === "wall") {
             c.removeClass("fa-fire");
             c.toggleClass("fa-bars");
@@ -555,6 +572,132 @@
             }
         }
     });
+</script>
+<script>
+    function getValues() {
+        var values = [];
+        for (let i = 1; i < 21; i++) {
+            let lineValues = [];
+            for (let j = 1; j < 21; j++) {
+                let v = document.getElementById(("m-" + i + "-" + j)).getElementsByClassName("fas")[0].classList;
+                if (v.length > 1) {
+                    let s = v[1];
+                    if (s === "fa-fire")
+                        lineValues.push("lava");
+                    else if (s === "fa-walking")
+                        lineValues.push("start");
+                    else if (s === "fa-bars")
+                        lineValues.push("wall")
+                    else if (s === "fa-star")
+                        lineValues.push("goal");
+                } else {
+                    lineValues.push("empty");
+                }
+            }
+            values.push(lineValues);
+        }
+        return values;
+    }
+
+    let first_maze = [
+        ["start", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "lava"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "lava", "lava", "lava", "empty", "empty", "lava", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "lava", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "lava", "lava", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava"],
+        ["wall", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava", "lava", "lava", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "empty", "empty", "empty", "goal"]
+    ];
+
+    function setValues() {
+        let values = first_maze;
+        for (let i = 0; i < 20; i++) {
+            for (let j = 0; j < 20; j++) {
+                let v = $(("#m-" + (i + 1) + "-" + (j + 1))).find("i");
+                if (values[i][j] === "wall") {
+                    v.addClass("fa-bars");
+                    v.css("color", "black");
+                } else if (values[i][j] === "lava") {
+                    v.addClass("fa-fire");
+                    v.css("color", "firebrick");
+                } else if (values[i][j] === "goal") {
+                    v.addClass("fa-star");
+                    v.css("color", "gold");
+                } else if (values[i][j] === "start") {
+                    v.addClass("fa-walking");
+                    v.css("color", "blue");
+                }
+            }
+        }
+    }
+</script>
+<script>
+    function sleep(ms) {
+        return new Promise(resolver => setTimeout(resolver, ms));
+    }
+
+    async function paintTheWay() {
+        if (!way) {
+            for (let k = 1; k < 21; k++) {
+                for (let m = 1; m < 21; m++) {
+                    $(("#m-" + k + "-" + m)).css("background-color", "darkred");
+                    $(("#m-" + k + "-" + m)).find("i").css("color", "white");
+                    await sleep(5);
+                }
+            }
+            $("#fm").css("display", "block");
+
+        } else {
+            let index = [1, 1];
+            let curr = $("#m-1-1");
+            curr.addClass("true-way");
+            for (let i = 0; i < way.length; i++) {
+                if (way[i] === "east") {
+                    index = [index[0], index[1] + 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "west") {
+                    index = [index[0], index[1] - 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "north") {
+                    index = [index[0] - 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else {
+                    index = [index[0] + 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                }
+                await sleep(300);
+            }
+        }
+    }
 </script>
 </body>
 </html>
