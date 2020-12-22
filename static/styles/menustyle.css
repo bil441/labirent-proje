@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #menu-body {
@@ -72,5 +73,9 @@
     background-color: #00e4cb;
     color: white;
     outline: 0;
+}
+
+body {
+    overflow-x: hidden;
 }
 
