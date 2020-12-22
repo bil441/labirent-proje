@@ -599,7 +599,7 @@
         return values;
     }
 
-    let first_maze = [
+    var mazes = [[
         ["start", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "lava"],
         ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
         ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
@@ -620,13 +620,60 @@
         ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
         ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
         ["wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "empty", "empty", "empty", "goal"]
-    ];
+    ], [
+        ["start", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "lava", "lava", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "wall", "lava", "lava", "empty", "wall", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "lava", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty"],
+        ["empty", "lava", "wall", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "goal"]
+    ], [
+        ["start", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "lava", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "wall", "wall", "wall", "wall", "empty", "lava", "wall", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "lava"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "empty"],
+        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty"],
+        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "wall", "empty"],
+        ["empty", "empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty"],
+        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "lava", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "lava", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "lava", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "lava", "lava", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "goal"]
+    ]];
 
-    function setValues() {
-        let values = first_maze;
+    async function setValues() {
+        this.blur();
+        let values = mazes[Math.floor(Math.random() * 10) % 3];
         for (let i = 0; i < 20; i++) {
             for (let j = 0; j < 20; j++) {
                 let v = $(("#m-" + (i + 1) + "-" + (j + 1))).find("i");
+                v.removeClass("fa-fire");
+                v.removeClass("fa-walking");
+                v.removeClass("fa-star");
+                v.removeClass("fa-bars");
                 if (values[i][j] === "wall") {
                     v.addClass("fa-bars");
                     v.css("color", "black");
@@ -640,6 +687,7 @@
                     v.addClass("fa-walking");
                     v.css("color", "blue");
                 }
+                await sleep(20);
             }
         }
     }

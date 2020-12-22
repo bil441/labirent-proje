@@ -52,9 +52,8 @@
 }
 
 .options-btn:focus {
-    background-color: #7d05e0;
-    color: white;
-    outline: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 .options-container {
