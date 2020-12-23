@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon"
+          type="image/svg"
+          href="../static/images/favicon.svg">
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
     <title>Settings</title>
     <link
             rel="stylesheet"
@@ -22,11 +26,14 @@
         <form action="#" method="post">
             <div style="display: none" id="diff-options">
                 <div class="switch">
-                    <input name="switch" id="one" type="radio" value="easy" {% if data == "easy" %} checked {% endif %} />
+                    <input name="switch" id="one" type="radio" value="easy" {% if data == "easy" %}
+                           checked {% endif %} />
                     <label for="one" class="switch__label">Easy</label>
-                    <input name="switch" id="two" type="radio" value="medium" {% if data == "medium" %} checked {% endif %}/>
+                    <input name="switch" id="two" type="radio" value="medium" {% if data == "medium" %}
+                           checked {% endif %}/>
                     <label for="two" class="switch__label">Medium</label>
-                    <input name="switch" id="three" type="radio" value="hard" {% if data == "hard" %} checked {% endif %}/>
+                    <input name="switch" id="three" type="radio" value="hard" {% if data == "hard" %}
+                           checked {% endif %}/>
                     <label for="three" class="switch__label">Hard</label>
                     <div class="switch__indicator"/>
                 </div>
