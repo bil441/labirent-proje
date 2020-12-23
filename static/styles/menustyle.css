@@ -26,9 +26,9 @@
 }
 
 .blue-button {
+    border: none;
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid #005ad5;
     border-radius: 30px;
     width: 250px;
     height: 60px;
@@ -51,9 +51,9 @@
 }
 
 .green-button {
+    border: none;
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid #00e4cb;
     border-radius: 30px;
     width: 250px;
     height: 60px;

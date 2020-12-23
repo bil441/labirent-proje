@@ -35,6 +35,11 @@ def game():
     return render_template("game.html", data=difficultyGlob)
 
 
+@app.route("/rules", methods=["POST", "GET"])
+def rules():
+    return render_template("rules.html")
+
+
 @app.route("/settings", methods=["POST", "GET"])
 def settings():
     if request.method == "POST":

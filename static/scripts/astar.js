@@ -28,7 +28,8 @@ class Astar {
                     portalend = this.grid[x][y];
                 } else if (strgrid[x][y] == 'start') {
                     this.grid[x][y] = new Cell1(x, y, false, false);
-                    this.start = this.grid[x][y];
+                    //this.start = this.grid[x][y];
+
                 } else if (strgrid[x][y] == 'lava')
                     this.grid[x][y] = new Cell1(x, y, false, true);
 
@@ -42,6 +43,7 @@ class Astar {
         }
 
         this.targets = trgtlist;
+        this.start = new Cell1(0,0,false,false);
 
         if (!portalflag)
             this.portal = null;
@@ -55,7 +57,8 @@ class Astar {
 
 
         var frontier = new PriorityQueue();
-        frontier.enqueue(this.grid[this.start.x][this.start.y], 0);
+        //frontier.enqueue(this.grid[this.start.x][this.start.y], 0);
+        frontier.enqueue(this.start, 0);
         this.grid[this.start.x][this.start.y].visited = true;
 
         var qlength = frontier.qlength();
@@ -126,12 +129,14 @@ class Astar {
 
             if (this.isPortal(currentNode)) {
                 var portalend = this.grid[this.portal.end.x][this.portal.end.y];
-                portalend.visited = true;
-                portalend.parent = currentNode;
-                portalend.h = this.manhattan(portalend);
-                portalend.g = currentNode.g + portalend.cost;
-                portalend.f = portalend.g + portalend.h;
-                frontier.enqueue(portalend, portalend.f);
+                if(!portalend.visited) {
+                    portalend.visited = true;
+                    portalend.parent = currentNode;
+                    portalend.h = this.manhattan(portalend);
+                    portalend.g = currentNode.g + portalend.cost;
+                    portalend.f = portalend.g + portalend.h;
+                    frontier.enqueue(portalend, portalend.f);
+                }
             }
 
             tmplength = frontier.qlength();

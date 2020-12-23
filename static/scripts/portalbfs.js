@@ -43,7 +43,7 @@ class Bfs {
         }
 
         this.targets = trgtlist;
-
+        this.start = new Cell(0,0,false,false);
         if (!portalflag)
             this.portal = null;
         else
@@ -126,10 +126,12 @@ class Bfs {
 
             if (this.isPortal(currentNode)) {
                 var portalend = this.grid[this.portal.end.x][this.portal.end.y];
-                portalend.visited = true;
-                portalend.parent = currentNode;
-                portalend.cost = currentNode.cost + 1;
-                frontier.push(portalend);
+                if(!portalend.visited) {
+                    portalend.visited = true;
+                    portalend.parent = currentNode;
+                    portalend.cost = currentNode.cost + 1;
+                    frontier.push(portalend);
+                }
             }
 
 
