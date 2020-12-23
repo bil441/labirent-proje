@@ -29,7 +29,7 @@
     <div class="game-container split left ">
         <div id="game" class="square ">
             <div class="content">
-                <div id="easy" class="easy col">
+                <div id="easy" class="easy col" {% if data != "easy" %}  style="display: none" {% endif %}>
                     <div id="e-1" class="e-line row">
                         <div id="e-1-1" class="e-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
                         </div>
@@ -152,7 +152,7 @@
                         <div id="e-10-10" class="e-sq col clickable"><i class="fas "></i></div>
                     </div>
                 </div>
-                <div id="medium" class="medium col" style="display: none">
+                <div id="medium" class="medium col" {% if data != "medium" %}  style="display: none" {% endif %}>
                     <div id="m-1" class="m-line row">
                         <div id="m-1-1" class="m-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
                         </div>
@@ -410,7 +410,7 @@
                         <div id="m-15-15" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                 </div>
-                <div id="hard" class="hard col" style="display: none">
+                <div id="hard" class="hard col" {% if data != "hard" %}  style="display: none" {% endif %}>
                     <div id="h-1" class="h-line row">
                         <div id="h-1-1" class="h-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
                         </div>
@@ -764,49 +764,49 @@
                         <div id="h-16-19" class="h-sq col clickable"><i class="fas "></i></div>
                         <div id="h-16-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="h-h-17" class="h-h-line row">
-                        <div id="h-h-17-1" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-2" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-3" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-4" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-5" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-6" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-7" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-8" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-9" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-10" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-11" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-12" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-13" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-14" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-15" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-16" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-17" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-18" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-19" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-17-20" class="h-h-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-17" class="h-line row">
+                        <div id="h-17-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="h-h-18" class="h-h-line row">
-                        <div id="h-h-18-1" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-2" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-3" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-4" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-5" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-6" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-7" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-8" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-9" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-10" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-11" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-12" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-13" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-14" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-15" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-16" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-17" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-18" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-19" class="h-h-sq col clickable"><i class="fas "></i></div>
-                        <div id="h-h-18-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-18" class="h-line row">
+                        <div id="h-18-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="h-19" class="h-line row">
                         <div id="h-19-1" class="h-sq col clickable"><i class="fas "></i></div>
@@ -877,15 +877,15 @@
         <div class="radio-toolbar2 row" style="margin-left: 5%;">
             <div class="col-md-4">
                 <input type="radio" id="portalin" name="block" value="portalin">
-                <label for="portalin">Portal In</label>
+                <label for="portalin">Portal Out</label>
             </div>
             <div class="col-md-4">
                 <input type="radio" id="portalout" name="block" value="portalout">
-                <label for="portalout">Portal Out</label>
+                <label for="portalout">Portal In</label>
             </div>
             <div class="col-md-4">
-                <input type="radio" id="portalout" name="block" value="portalout">
-                <label for="portalout" style=" height: 0px;"></label>
+                <input type="radio" id="asd" name="block" value="empty">
+                <label for="asd" style=" height: 0px;"></label>
             </div>
         </div>
     </div>
@@ -919,9 +919,17 @@
         }
     }
 
-    var sizep = "e-";
-    var sizepid = "#e-";
-    var size = 10;
+    var sizep = "h-";
+    var sizepid = "#h-";
+    var size = 20;
+
+    {% if data == "easy" %} sizep = "e-"; sizepid = "#e-"; size = 10;
+    {% endif %}
+    {% if data == "medium" %} sizep = "m-"; sizepid = "#m-"; size = 15;
+    {% endif %}
+    {% if data == "hard" %} sizep = "h-"; sizepid = "#h-"; size = 20;
+    {% endif %}
+
     var fm = $("#fm");
     //user fill matrix
     let pos = [0, [0, 0], [0, 0], [0, 0]];
@@ -1194,6 +1202,7 @@
     //fill maze with one of sample mazes
     async function setValues() {
         let values = mazes[Math.floor(Math.random() * 10) % 3];
+        //fm.text("");
         for (let i = 0; i < size; i++) {
             for (let j = 0; j < size; j++) {
                 let v = $((sizepid + (i + 1) + "-" + (j + 1))).find("i");
@@ -1237,8 +1246,7 @@
 
     //get result data = way, cost, space and then show it on the html
     async function paintTheWay(data) {
-        let way = data[0];
-        if (!way) {
+        if (data === null) {
             for (let k = 1; k < size + 1; k++) {
                 for (let m = 1; m < size + 1; m++) {
                     $((sizepid + k + "-" + m)).css("background-color", "darkred");
@@ -1250,6 +1258,7 @@
             fm.addClass("fail-message");
 
         } else {
+            let way = data[0];
             let index = [1, 1];
             let curr = $(sizepid + "1-1");
             curr.addClass("true-way");
@@ -1280,11 +1289,10 @@
                     curr.find("i").css("color", "blue");
                 } else if (way[i].includes("teleport")) {
                     let ports = way[i].split("-");
-                    index = [ports[1] + 1, ports[2] + 1];
+                    index = [parseInt(ports[1]) + 1, parseInt(ports[2]) + 1];
                     curr.find("i").removeClass("fa-walking");
                     curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
-                    curr.find("i").removeClass("fa-circle");
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else {
@@ -1298,29 +1306,25 @@
                 }
                 await sleep(300);
             }
-            fm.text("You reached to goal. Cost:" + data[1] + ", Space complexity" + data[2]);
+            fm.text("You reached to goal. Cost: " + data[1] + ", Space complexity: " + data[2]);
             fm.addClass("fail-message");
         }
     }
 
     function bfs() {
         let g = getValues();
-
         if (g !== false) {
-            let data = new Bfs(g).search(); //bfs call 3lü array -> sağ sol bilgisi, cost, space
+            let data = new Bfs(g).search();
             paintTheWay(data);
         }
-
     }
 
     function astar() {
         let g = getValues();
-
         if (g !== false) {
-            let data = new Astar(g).search();   //astar call 3lü array  -> sağ sol bilgisi, cost, space
+            let data = new Astar(g).search();
             paintTheWay(data);
         }
-
     }
 </script>
 </body>
