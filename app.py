@@ -32,7 +32,7 @@ def contact():
 
 @app.route("/game", methods=["POST", "GET"])
 def game():
-    return render_template("game.html", data=difficulty)
+    return render_template("game.html", data=difficultyGlob)
 
 
 @app.route("/settings", methods=["POST", "GET"])
