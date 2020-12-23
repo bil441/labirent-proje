@@ -7,7 +7,6 @@ class Astar{
         var portalstart, portalend;
         var trgtlist = [];
 
-        var cnt=0;
         var portalflag=false;
 
 
@@ -15,34 +14,33 @@ class Astar{
             this.grid[x] = [];
             for(var y = 0, yl = strgrid[0].length; y < yl; y++) {
 
-                if(strgrid[x][y]=='Wall')
+                if(strgrid[x][y]=='wall')
                     this.grid[x][y]= new Cell(x,y,true, false);
 
-                else if(strgrid[x][y]=='Empty'){
+                else if(strgrid[x][y]=='empty'){
                     this.grid[x][y]= new Cell(x,y,false, false);
-                    cnt++;
                 }
 
-                else if(strgrid[x][y]=='PortalStart'){
+                else if(strgrid[x][y]=='portalstart'){
                     this.grid[x][y]= new Cell(x,y,false, false);
                     portalstart=this.grid[x][y];
                     portalflag=true;
                 }
 
-                else if(strgrid[x][y]=='PortalEnd'){
+                else if(strgrid[x][y]=='portalend'){
                     this.grid[x][y]= new Cell(x,y,false, false);
                     portalend=this.grid[x][y];
                 }
 
-                else if(strgrid[x][y]=='Start'){
+                else if(strgrid[x][y]=='start'){
                     this.grid[x][y]= new Cell(x,y,false, false);
                     this.start=this.grid[x][y];
                 }
 
-                else if(strgrid[x][y]=='Lava')
+                else if(strgrid[x][y]=='lava')
                     this.grid[x][y]= new Cell(x,y,false, true);
 
-                else if(strgrid[x][y]=='Goal'){
+                else if(strgrid[x][y]=='goal'){
                     this.grid[x][y]= new Cell(x,y,false, false);
                     trgtlist.push(this.grid[x][y]);
                 }
@@ -60,16 +58,18 @@ class Astar{
         else
             this.portal = new Portal(portalstart, portalend);
 
-        console.log("cnt: " + cnt);
 
     }
 
     search() {
 
+
         var frontier = new PriorityQueue();
         frontier.enqueue(this.grid[this.start.x][this.start.y], 0);
         this.grid[this.start.x][this.start.y].visited = true;
 
+        var qlength = frontier.qlength();
+        var tmplength;
         //console.log(frontier.printPQueue());
 
         var steps=0;
@@ -99,7 +99,9 @@ class Astar{
                 }
                 console.log("steps: " + steps);
                 //return ret.reverse();
-                return direction.reverse();
+                return [direction.reverse(), currentNode.g, tmplength];
+                //return new Array(direction.reverse(), currentNode.g, tmplength);
+                //return direction.reverse();
             }
 
             //console.log("Hello2");
@@ -144,7 +146,10 @@ class Astar{
                 frontier.enqueue(portalend, portalend.f);
             }
 
+            tmplength=frontier.qlength();
 
+            if(tmplength>qlength)
+                qlength=tmplength;
             //console.log(frontier.printPQueue());
 
             //console.log("Hello3");
@@ -271,7 +276,7 @@ class Astar{
             return 'east'
 
         else
-            return  'teleport'
+            return  "teleport-" + this.portal.end.x + "-" + this.portal.end.y;
     }
 
 
