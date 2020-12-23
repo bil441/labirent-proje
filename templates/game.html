@@ -867,7 +867,7 @@
             curr.addClass("true-way");
             for (let i = 0; i < way.length; i++) {
                 if (way[i] === "east") {
-                    index = [index[0]+1, index[1]];
+                    index = [index[0] + 1, index[1]];
                     curr.find("i").removeClass("fa-walking");
                     curr = $(("#m-" + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
@@ -875,7 +875,7 @@
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else if (way[i] === "west") {
-                    index = [index[0]-1, index[1]];
+                    index = [index[0] - 1, index[1]];
                     curr.find("i").removeClass("fa-walking");
                     curr = $(("#m-" + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
@@ -883,7 +883,7 @@
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else if (way[i] === "north") {
-                    index = [index[0], index[1]-1];
+                    index = [index[0], index[1] - 1];
                     curr.find("i").removeClass("fa-walking");
                     curr = $(("#m-" + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
@@ -900,7 +900,7 @@
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else {
-                    index = [index[0], index[1]+1];
+                    index = [index[0], index[1] + 1];
                     curr.find("i").removeClass("fa-walking");
                     curr = $(("#m-" + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
