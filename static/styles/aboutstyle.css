@@ -40,7 +40,7 @@ p {
 .button-1 {
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid #ff6798;
+    border: none;
     border-radius: 30px;
     width: 250px;
     height: 60px;
@@ -65,7 +65,7 @@ p {
 .button-2 {
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid #7d05e0;
+    border: none;
     border-radius: 30px;
     width: 250px;
     height: 60px;
