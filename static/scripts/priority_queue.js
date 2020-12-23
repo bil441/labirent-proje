@@ -1,6 +1,5 @@
 class QElement {
-    constructor(element, priority)
-    {
+    constructor(element, priority) {
         this.element = element;
         this.priority = priority;
     }
@@ -9,13 +8,11 @@ class QElement {
 class PriorityQueue {
 
     // An array is used to implement priority
-    constructor()
-    {
+    constructor() {
         this.items = [];
     }
 
-    enqueue(element, priority)
-    {
+    enqueue(element, priority) {
         // creating object from queue element
         var qElement = new QElement(element, priority);
         var contain = false;
@@ -40,8 +37,7 @@ class PriorityQueue {
         }
     }
 
-    dequeue()
-    {
+    dequeue() {
 
 
         // return the dequeued element
@@ -55,8 +51,7 @@ class PriorityQueue {
 
     }
 
-    front()
-    {
+    front() {
         // returns the highest priority element
         // in the Priority queue without removing it.
         if (this.isEmpty())
@@ -64,8 +59,7 @@ class PriorityQueue {
         return this.items[0];
     }
 
-    rear()
-    {
+    rear() {
         // returns the lowest priorty
         // element of the queue
         if (this.isEmpty())
@@ -73,21 +67,19 @@ class PriorityQueue {
         return this.items[this.items.length - 1];
     }
 
-    isEmpty()
-    {
+    isEmpty() {
         // return true if the queue is empty.
         return this.items.length == 0;
     }
 
-    qlength(){
+    qlength() {
         return this.items.length;
     }
 
-    printPQueue()
-    {
-    var str = "";
-    for (var i = 0; i < this.items.length; i++)
-        str += "(" + this.items[i].element.x + " " + this.items[i].element.y + ") ";
-    return str;
+    printPQueue() {
+        var str = "";
+        for (var i = 0; i < this.items.length; i++)
+            str += "(" + this.items[i].element.x + " " + this.items[i].element.y + ") ";
+        return str;
     }
 }

@@ -1,4 +1,4 @@
-class Astar{
+class Astar {
 
     constructor(strgrid) {
 
@@ -7,45 +7,35 @@ class Astar{
         var portalstart, portalend;
         var trgtlist = [];
 
-        var portalflag=false;
+        var portalflag = false;
 
 
-        for(var x = 0, xl = strgrid.length; x < xl; x++) {
+        for (var x = 0, xl = strgrid.length; x < xl; x++) {
             this.grid[x] = [];
-            for(var y = 0, yl = strgrid[0].length; y < yl; y++) {
+            for (var y = 0, yl = strgrid[0].length; y < yl; y++) {
 
-                if(strgrid[x][y]=='wall')
-                    this.grid[x][y]= new Cell(x,y,true, false);
+                if (strgrid[x][y] == 'wall')
+                    this.grid[x][y] = new Cell1(x, y, true, false);
 
-                else if(strgrid[x][y]=='empty'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
-                }
+                else if (strgrid[x][y] == 'empty') {
+                    this.grid[x][y] = new Cell1(x, y, false, false);
+                } else if (strgrid[x][y] == 'portalstart') {
+                    this.grid[x][y] = new Cell1(x, y, false, false);
+                    portalstart = this.grid[x][y];
+                    portalflag = true;
+                } else if (strgrid[x][y] == 'portalend') {
+                    this.grid[x][y] = new Cell1(x, y, false, false);
+                    portalend = this.grid[x][y];
+                } else if (strgrid[x][y] == 'start') {
+                    this.grid[x][y] = new Cell1(x, y, false, false);
+                    this.start = this.grid[x][y];
+                } else if (strgrid[x][y] == 'lava')
+                    this.grid[x][y] = new Cell1(x, y, false, true);
 
-                else if(strgrid[x][y]=='portalstart'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
-                    portalstart=this.grid[x][y];
-                    portalflag=true;
-                }
-
-                else if(strgrid[x][y]=='portalend'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
-                    portalend=this.grid[x][y];
-                }
-
-                else if(strgrid[x][y]=='start'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
-                    this.start=this.grid[x][y];
-                }
-
-                else if(strgrid[x][y]=='lava')
-                    this.grid[x][y]= new Cell(x,y,false, true);
-
-                else if(strgrid[x][y]=='goal'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                else if (strgrid[x][y] == 'goal') {
+                    this.grid[x][y] = new Cell1(x, y, false, false);
                     trgtlist.push(this.grid[x][y]);
                 }
-
-
 
 
             }
@@ -54,7 +44,7 @@ class Astar{
         this.targets = trgtlist;
 
         if (!portalflag)
-            this.portal=null;
+            this.portal = null;
         else
             this.portal = new Portal(portalstart, portalend);
 
@@ -72,10 +62,10 @@ class Astar{
         var tmplength;
         //console.log(frontier.printPQueue());
 
-        var steps=0;
+        var steps = 0;
 
         //while(false) {
-        while(!frontier.isEmpty()) {
+        while (!frontier.isEmpty()) {
 
             //console.log("Hello1");
             // Grab the lowest f(x) to process next.  Heap keeps this sorted for us.
@@ -85,14 +75,14 @@ class Astar{
 
 
             // target case -- result has been found, return the traced path.
-            if(this.isTarget(currentNode)) {
+            if (this.isTarget(currentNode)) {
 
                 console.log("**");
-                var direction=[]
+                var direction = []
 
                 var curr = currentNode;
                 var ret = [];
-                while(curr.parent) {
+                while (curr.parent) {
                     ret.push(curr);
                     direction.push(this.getDirection(curr.parent, curr))
                     curr = curr.parent;
@@ -110,17 +100,15 @@ class Astar{
             // Normal case -- move currentNode from open to closed, process each of its neighbors.
 
 
-
-
             // Find all neighbors for the current node.
             var neighbors = this.neighbors(currentNode);
 
-            for(var i=0, il = neighbors.length; i < il; i++) {
+            for (var i = 0, il = neighbors.length; i < il; i++) {
                 var neighbor = neighbors[i];
 
                 //console.log("("+ neighbor.x + "," + neighbor.y + ")\n");
 
-                if(neighbor.visited || neighbor.isWall) {
+                if (neighbor.visited || neighbor.isWall) {
                     continue;
                 }
 
@@ -136,7 +124,7 @@ class Astar{
 
             }
 
-            if(this.isPortal(currentNode)){
+            if (this.isPortal(currentNode)) {
                 var portalend = this.grid[this.portal.end.x][this.portal.end.y];
                 portalend.visited = true;
                 portalend.parent = currentNode;
@@ -146,10 +134,10 @@ class Astar{
                 frontier.enqueue(portalend, portalend.f);
             }
 
-            tmplength=frontier.qlength();
+            tmplength = frontier.qlength();
 
-            if(tmplength>qlength)
-                qlength=tmplength;
+            if (tmplength > qlength)
+                qlength = tmplength;
             //console.log(frontier.printPQueue());
 
             //console.log("Hello3");
@@ -169,26 +157,25 @@ class Astar{
 
         var mindist = Infinity;
         var dist = 0;
-        if(this.portal!=null){
+        if (this.portal != null) {
 
-            var portaldist= Math.abs(this.portal.start.x- cell.x) + Math.abs( this.portal.start.y - cell.y);
+            var portaldist = Math.abs(this.portal.start.x - cell.x) + Math.abs(this.portal.start.y - cell.y);
 
-            for (var i=0, il=this.targets.length; i<il; i++){
-                dist= Math.abs(this.targets[i].x-cell.x) + Math.abs(this.targets[i].y-cell.y);
-                if(dist<mindist)
-                    mindist=dist
-                dist = portaldist + Math.abs(this.portal.end.x- this.targets[i].x) + Math.abs( this.portal.end.y - this.targets[i].y)+1;
-                if(dist<mindist)
-                    mindist=dist
+            for (var i = 0, il = this.targets.length; i < il; i++) {
+                dist = Math.abs(this.targets[i].x - cell.x) + Math.abs(this.targets[i].y - cell.y);
+                if (dist < mindist)
+                    mindist = dist
+                dist = portaldist + Math.abs(this.portal.end.x - this.targets[i].x) + Math.abs(this.portal.end.y - this.targets[i].y) + 1;
+                if (dist < mindist)
+                    mindist = dist
             }
 
-        }
-        else {
+        } else {
 
-            for (var i=0, il=this.targets.length; i<il; i++){
-                dist= Math.abs(this.targets[i].x-cell.x) + Math.abs(this.targets[i].y-cell.y);
-                if(dist<mindist)
-                    mindist=dist
+            for (var i = 0, il = this.targets.length; i < il; i++) {
+                dist = Math.abs(this.targets[i].x - cell.x) + Math.abs(this.targets[i].y - cell.y);
+                if (dist < mindist)
+                    mindist = dist
             }
         }
 
@@ -209,106 +196,105 @@ class Astar{
         //console.log("height: " + height);
 
         // West
-        if(this.grid[x-1] && this.grid[x-1][y]) {
-            ret.push(this.grid[x-1][y]);
+        if (this.grid[x - 1] && this.grid[x - 1][y]) {
+            ret.push(this.grid[x - 1][y]);
         }
 
         // East
-        if(this.grid[x+1] && this.grid[x+1][y]) {
-            ret.push(this.grid[x+1][y]);
+        if (this.grid[x + 1] && this.grid[x + 1][y]) {
+            ret.push(this.grid[x + 1][y]);
         }
 
         // South
-        if(this.grid[x] && this.grid[x][y-1]) {
-            ret.push(this.grid[x][y-1]);
+        if (this.grid[x] && this.grid[x][y - 1]) {
+            ret.push(this.grid[x][y - 1]);
         }
 
         // North
-        if(this.grid[x] && this.grid[x][y+1]) {
-            ret.push(this.grid[x][y+1]);
+        if (this.grid[x] && this.grid[x][y + 1]) {
+            ret.push(this.grid[x][y + 1]);
         }
-
 
 
         return ret;
     };
 
-    isTarget(cell){
+    isTarget(cell) {
 
         //console.log("cell: ("+ cell.x + "," + cell.y + ")\n");
 
 
-        for(var i=0, il=this.targets.length; i<il; i++){
+        for (var i = 0, il = this.targets.length; i < il; i++) {
             //console.log("("+ this.targets[i].x + "," + this.targets[i].y + ")\n");
-            if(this.targets[i].x==cell.x && this.targets[i].y==cell.y)
+            if (this.targets[i].x == cell.x && this.targets[i].y == cell.y)
                 return true;
         }
 
         return false;
     };
 
-    isPortal(cell){
+    isPortal(cell) {
 
-        if(this.portal==null)
+        if (this.portal == null)
             return false;
 
-        if(this.portal.start.x==cell.x && this.portal.start.y==cell.y)
+        if (this.portal.start.x == cell.x && this.portal.start.y == cell.y)
             return true;
 
         return false;
     }
 
-    getDirection(node1, node2){
+    getDirection(node1, node2) {
 
-        var x= node1.x - node2.x;
-        var y= node1.y - node2.y;
+        var x = node1.x - node2.x;
+        var y = node1.y - node2.y;
 
-        if(x==0 && y==1)
+        if (x == 0 && y == 1)
             return 'north'
 
-        if(x==0 && y==-1)
+        if (x == 0 && y == -1)
             return 'south'
 
-        if(x==1 && y==0)
+        if (x == 1 && y == 0)
             return 'west'
 
-        if(x==-1 && y==0)
+        if (x == -1 && y == 0)
             return 'east'
 
         else
-            return  "teleport-" + this.portal.end.x + "-" + this.portal.end.y;
+            return "teleport-" + this.portal.end.x + "-" + this.portal.end.y;
     }
-
 
 
 }
 
-class Cell{
+
+class Cell1 {
 
     constructor(xaxis, yaxis, wall, lava) {
-        this.x=xaxis;
-        this.y=yaxis;
-        this.isWall=wall;
-        this.f=0;
-        this.g=0;
-        this.h=0;
-        this.visited=0;
+        this.x = xaxis;
+        this.y = yaxis;
+        this.isWall = wall;
+        this.f = 0;
+        this.g = 0;
+        this.h = 0;
+        this.visited = 0;
         this.parent = null;
         this.isLava = lava
 
         if (lava)
-            this.cost=10;
+            this.cost = 10;
         else
-            this.cost=1;
+            this.cost = 1;
     }
 
 }
 
 
-class Portal{
+class Portal {
 
     constructor(start, end) {
-        this.start=start;
-        this.end=end;
+        this.start = start;
+        this.end = end;
     }
 }

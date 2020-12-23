@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/scripts/priority_queue.js"></script>
+    <script src="../static/scripts/portalbfs.js"></script>
+    <script src="../static/scripts/astar.js"></script>
 
 </head>
 <body id="game-body">
@@ -1086,10 +1089,12 @@
         if ((pin[0] === true && pou[0] === false) || (pin[0] === false && pou[0] === true)) {
             fm.text("Portal needs start and end points");
             fm.addClass("fail-message");
+            return false;
         }
         if (pos[0] === 0) {
             fm.text("Please give at least one goal");
             fm.addClass("fail-message");
+            return false;
         } else {
             let values = [];
             for (let i = 1; i < size + 1; i++) {
@@ -1300,14 +1305,22 @@
 
     function bfs() {
         let g = getValues();
-        //let data = bfs call 3lü array -> sağ sol bilgisi, cost, space
-        paintTheWay(data);
+
+        if (g !== false) {
+            let data = new Bfs(g).search(); //bfs call 3lü array -> sağ sol bilgisi, cost, space
+            paintTheWay(data);
+        }
+
     }
 
     function astar() {
         let g = getValues();
-        //let data = astar call 3lü array  -> sağ sol bilgisi, cost, space
-        paintTheWay(data);
+
+        if (g !== false) {
+            let data = new Astar(g).search();   //astar call 3lü array  -> sağ sol bilgisi, cost, space
+            paintTheWay(data);
+        }
+
     }
 </script>
 </body>
