@@ -3,8 +3,7 @@
 <hr>
 
 [![Build Status](https://travis-ci.com/bil441/labirent-proje.svg?branch=develop)](https://travis-ci.com/bil441/labirent-proje)
-
-![GitHub](https://img.shields.io/github/license/bil441/labirent-proje)
+<img alt="GitHub" src="https://img.shields.io/github/license/bil441/labirent-proje?color=blue">
 
 <br>
 
