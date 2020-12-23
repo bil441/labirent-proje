@@ -8,6 +8,9 @@
 
 <br>
 
+### Live Demo
+[Click here for HerokuApp!](https://maze-solver-bil441.herokuapp.com)
+
 ###  Language & Frameworks
 - Python
 - Flask
