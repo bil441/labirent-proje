@@ -29,7 +29,130 @@
     <div class="game-container split left ">
         <div id="game" class="square ">
             <div class="content">
-                <div id="medium" class="medium col">
+                <div id="easy" class="easy col" {% if data != "easy" %}  style="display: none" {% endif %}>
+                    <div id="e-1" class="e-line row">
+                        <div id="e-1-1" class="e-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
+                        </div>
+                        <div id="e-1-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-1-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-2" class="e-line row">
+                        <div id="e-2-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-2-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-3" class="e-line row">
+                        <div id="e-3-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-3-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-4" class="e-line row">
+                        <div id="e-4-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-4-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-5" class="e-line row">
+                        <div id="e-5-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-5-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-6" class="e-line row">
+                        <div id="e-6-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-6-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-7" class="e-line row">
+                        <div id="e-7-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-7-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-8" class="e-line row">
+                        <div id="e-8-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-8-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-9" class="e-line row">
+                        <div id="e-9-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-9-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="e-10" class="e-line row">
+                        <div id="e-10-1" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-2" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-3" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-4" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-5" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-6" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-7" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-8" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-9" class="e-sq col clickable"><i class="fas "></i></div>
+                        <div id="e-10-10" class="e-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                </div>
+                <div id="medium" class="medium col" {% if data != "medium" %}  style="display: none" {% endif %}>
                     <div id="m-1" class="m-line row">
                         <div id="m-1-1" class="m-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
                         </div>
@@ -47,11 +170,6 @@
                         <div id="m-1-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-1-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-1-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-1-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-1-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-1-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-1-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-1-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-2" class="m-line row">
                         <div id="m-2-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -69,11 +187,6 @@
                         <div id="m-2-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-2-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-2-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-2-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-2-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-2-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-2-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-2-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-3" class="m-line row">
                         <div id="m-3-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -91,11 +204,6 @@
                         <div id="m-3-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-3-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-3-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-3-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-3-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-3-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-3-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-3-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-4" class="m-line row">
                         <div id="m-4-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -113,11 +221,6 @@
                         <div id="m-4-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-4-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-4-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-4-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-4-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-4-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-4-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-4-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-5" class="m-line row">
                         <div id="m-5-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -135,11 +238,6 @@
                         <div id="m-5-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-5-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-5-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-5-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-5-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-5-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-5-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-5-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-6" class="m-line row">
                         <div id="m-6-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -157,11 +255,6 @@
                         <div id="m-6-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-6-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-6-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-6-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-6-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-6-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-6-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-6-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-7" class="m-line row">
                         <div id="m-7-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -179,11 +272,6 @@
                         <div id="m-7-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-7-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-7-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-7-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-7-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-7-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-7-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-7-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-8" class="m-line row">
                         <div id="m-8-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -201,11 +289,6 @@
                         <div id="m-8-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-8-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-8-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-8-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-8-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-8-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-8-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-8-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-9" class="m-line row">
                         <div id="m-9-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -223,11 +306,6 @@
                         <div id="m-9-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-9-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-9-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-9-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-9-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-9-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-9-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-9-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-10" class="m-line row">
                         <div id="m-10-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -245,11 +323,6 @@
                         <div id="m-10-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-10-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-10-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-10-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-10-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-10-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-10-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-10-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-11" class="m-line row">
                         <div id="m-11-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -267,11 +340,6 @@
                         <div id="m-11-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-11-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-11-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-11-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-11-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-11-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-11-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-11-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-12" class="m-line row">
                         <div id="m-12-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -289,11 +357,6 @@
                         <div id="m-12-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-12-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-12-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-12-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-12-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-12-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-12-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-12-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-13" class="m-line row">
                         <div id="m-13-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -311,11 +374,6 @@
                         <div id="m-13-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-13-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-13-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-13-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-13-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-13-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-13-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-13-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-14" class="m-line row">
                         <div id="m-14-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -333,11 +391,6 @@
                         <div id="m-14-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-14-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-14-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-14-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-14-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-14-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-14-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-14-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
                     <div id="m-15" class="m-line row">
                         <div id="m-15-1" class="m-sq col clickable"><i class="fas "></i></div>
@@ -355,121 +408,449 @@
                         <div id="m-15-13" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-15-14" class="m-sq col clickable"><i class="fas "></i></div>
                         <div id="m-15-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-15-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-15-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-15-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-15-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-15-20" class="m-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="m-16" class="m-line row">
-                        <div id="m-16-1" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-2" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-3" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-4" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-5" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-6" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-7" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-8" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-9" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-10" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-11" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-12" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-13" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-14" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-16-20" class="m-sq col clickable"><i class="fas "></i></div>
+                </div>
+                <div id="hard" class="hard col" {% if data != "hard" %}  style="display: none" {% endif %}>
+                    <div id="h-1" class="h-line row">
+                        <div id="h-1-1" class="h-sq col clickable"><i class="fas fa-walking" style="color: blue"></i>
+                        </div>
+                        <div id="h-1-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-1-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="m-17" class="m-line row">
-                        <div id="m-17-1" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-2" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-3" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-4" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-5" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-6" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-7" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-8" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-9" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-10" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-11" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-12" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-13" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-14" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-17-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-2" class="h-line row">
+                        <div id="h-2-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-2-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="m-18" class="m-line row">
-                        <div id="m-18-1" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-2" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-3" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-4" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-5" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-6" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-7" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-8" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-9" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-10" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-11" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-12" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-13" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-14" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-18-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-3" class="h-line row">
+                        <div id="h-3-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-3-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="m-19" class="m-line row">
-                        <div id="m-19-1" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-2" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-3" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-4" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-5" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-6" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-7" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-8" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-9" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-10" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-11" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-12" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-13" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-14" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-19-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-4" class="h-line row">
+                        <div id="h-4-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-4-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
-                    <div id="m-20" class="m-line row">
-                        <div id="m-20-1" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-2" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-3" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-4" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-5" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-6" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-7" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-8" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-9" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-10" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-11" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-12" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-13" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-14" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-15" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-16" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-17" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-18" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-19" class="m-sq col clickable"><i class="fas "></i></div>
-                        <div id="m-20-20" class="m-sq col clickable"><i class="fas "></i></div>
+                    <div id="h-5" class="h-line row">
+                        <div id="h-5-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-5-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-6" class="h-line row">
+                        <div id="h-6-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-6-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-7" class="h-line row">
+                        <div id="h-7-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-7-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-8" class="h-line row">
+                        <div id="h-8-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-8-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-9" class="h-line row">
+                        <div id="h-9-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-9-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-10" class="h-line row">
+                        <div id="h-10-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-10-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-11" class="h-line row">
+                        <div id="h-11-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-11-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-12" class="h-line row">
+                        <div id="h-12-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-12-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-13" class="h-line row">
+                        <div id="h-13-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-13-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-14" class="h-line row">
+                        <div id="h-14-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-14-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-15" class="h-line row">
+                        <div id="h-15-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-15-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-16" class="h-line row">
+                        <div id="h-16-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-16-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-17" class="h-line row">
+                        <div id="h-17-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-17-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-18" class="h-line row">
+                        <div id="h-18-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-18-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-19" class="h-line row">
+                        <div id="h-19-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-19-20" class="h-sq col clickable"><i class="fas "></i></div>
+                    </div>
+                    <div id="h-20" class="h-line row">
+                        <div id="h-20-1" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-2" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-3" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-4" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-5" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-6" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-7" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-8" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-9" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-10" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-11" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-12" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-13" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-14" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-15" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-16" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-17" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-18" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-19" class="h-sq col clickable"><i class="fas "></i></div>
+                        <div id="h-20-20" class="h-sq col clickable"><i class="fas "></i></div>
                     </div>
                 </div>
             </div>
@@ -496,15 +877,15 @@
         <div class="radio-toolbar2 row" style="margin-left: 5%;">
             <div class="col-md-4">
                 <input type="radio" id="portalin" name="block" value="portalin">
-                <label for="portalin">Portal In</label>
+                <label for="portalin">Portal Out</label>
             </div>
             <div class="col-md-4">
                 <input type="radio" id="portalout" name="block" value="portalout">
-                <label for="portalout">Portal Out</label>
+                <label for="portalout">Portal In</label>
             </div>
             <div class="col-md-4">
-                <input type="radio" id="portalout" name="block" value="portalout">
-                <label for="portalout" style=" height: 0px;"></label>
+                <input type="radio" id="asd" name="block" value="empty">
+                <label for="asd" style=" height: 0px;"></label>
             </div>
         </div>
     </div>
@@ -538,6 +919,18 @@
         }
     }
 
+    var sizep = "h-";
+    var sizepid = "#h-";
+    var size = 20;
+
+    {% if data == "easy" %} sizep = "e-"; sizepid = "#e-"; size = 10;
+    {% endif %}
+    {% if data == "medium" %} sizep = "m-"; sizepid = "#m-"; size = 15;
+    {% endif %}
+    {% if data == "hard" %} sizep = "h-"; sizepid = "#h-"; size = 20;
+    {% endif %}
+
+    var fm = $("#fm");
     //user fill matrix
     let pos = [0, [0, 0], [0, 0], [0, 0]];
     let pin = [false, [0, 0]];
@@ -606,14 +999,14 @@
                 }
                 if (c.hasClass("fa-circle")) { // out varsa outu sil
                     pou[0] = false;
-                    $("#m-" + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
+                    $(sizepid + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
                 }
                 if (c.hasClass("fa-dot-circle")) { // in varsa in silme için tıkladı in sil
                     pin[0] = false;
                     c.removeClass("fa-dot-circle");
                 } else {// in eklemek için tıkladı
                     if (pin[0]) { // eski ini sil
-                        $("#m-" + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
+                        $(sizepid + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
                     }
                     pin[0] = true;
                     let d = c.parent().attr("id").split("-");
@@ -637,14 +1030,14 @@
                 }
                 if (c.hasClass("fa-dot-circle")) { // in varsa ini sil
                     pin[0] = false;
-                    $("#m-" + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
+                    $(sizepid + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
                 }
                 if (c.hasClass("fa-circle")) { // out varsa out silme için tıkladı out sil
                     pou[0] = false;
                     c.removeClass("fa-circle");
                 } else {// out eklemek için tıkladı
                     if (pou[0]) { // eski outu sil
-                        $("#m-" + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
+                        $(sizepid + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
                     }
                     pou[0] = true;
                     let d = c.parent().attr("id").split("-");
@@ -701,7 +1094,6 @@
 
     // get values from divs and fill it into an double array
     function getValues() {
-        let fm = $("#fm");
         if ((pin[0] === true && pou[0] === false) || (pin[0] === false && pou[0] === true)) {
             fm.text("Portal needs start and end points");
             fm.addClass("fail-message");
@@ -713,10 +1105,10 @@
             return false;
         } else {
             let values = [];
-            for (let i = 1; i < 21; i++) {
+            for (let i = 1; i < size + 1; i++) {
                 let lineValues = [];
-                for (let j = 1; j < 21; j++) {
-                    let v = document.getElementById(("m-" + i + "-" + j)).getElementsByClassName("fas")[0].classList;
+                for (let j = 1; j < size + 1; j++) {
+                    let v = document.getElementById((sizep + i + "-" + j)).getElementsByClassName("fas")[0].classList;
                     if (v.length > 1) {
                         let s = v[1];
                         if (s === "fa-fire")
@@ -742,77 +1134,117 @@
     }
 
     //sample mazes
-    var mazes = [[
-        ["start", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "lava"],
-        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "lava", "lava", "lava", "empty", "empty", "lava", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
-        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "lava", "empty", "empty"],
-        ["wall", "empty", "lava", "empty", "empty", "lava", "lava", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty"],
-        ["wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava"],
-        ["wall", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava", "lava", "lava", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
-        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
-        ["wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "empty", "empty", "empty", "goal"]
-    ], [
-        ["start", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "lava", "lava", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
-        ["empty", "wall", "wall", "empty", "lava", "empty", "wall", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
-        ["empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava", "empty"],
-        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
-        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
-        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
-        ["empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "lava", "empty"],
-        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
-        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty"],
-        ["empty", "lava", "wall", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "goal"]
-    ], [
-        ["start", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "lava", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
-        ["empty", "empty", "wall", "wall", "wall", "wall", "empty", "lava", "wall", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "lava"],
-        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "lava", "empty"],
-        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty"],
-        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "wall", "empty"],
-        ["empty", "empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty"],
-        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
-        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
-        ["empty", "lava", "lava", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
-        ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "lava", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
-        ["empty", "lava", "lava", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "lava", "lava", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
-        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "goal"]
-    ]];
+    var mazes = "";
+    {% if data == "hard"%}
+        mazes = [[
+            ["start", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "lava", "lava", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+            ["empty", "wall", "wall", "empty", "lava", "empty", "wall", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+            ["empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava", "empty"],
+            ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "lava", "empty"],
+            ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+            ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty"],
+            ["empty", "lava", "wall", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "goal"]
+        ], [
+            ["start", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "lava", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "empty", "wall", "wall", "wall", "wall", "empty", "lava", "wall", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "lava"],
+            ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "lava", "empty"],
+            ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty"],
+            ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "wall", "empty"],
+            ["empty", "empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty"],
+            ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+            ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+            ["empty", "lava", "lava", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
+            ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "lava", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+            ["empty", "lava", "lava", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "lava", "lava", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "goal"]
+        ], [
+            ["start", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["wall", "wall", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava"],
+            ["wall", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "lava", "lava", "empty", "empty", "lava"],
+            ["wall", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "lava"],
+            ["wall", "empty", "lava", "lava", "lava", "lava", "lava", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "empty", "lava"],
+            ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "lava"],
+            ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "lava"],
+            ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "lava"],
+            ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "lava"],
+            ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "lava", "empty", "wall", "empty", "empty", "lava"],
+            ["empty", "lava", "lava", "empty", "empty", "empty", "lava", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "lava", "goal", "wall", "empty", "empty", "wall"],
+            ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "empty", "wall"],
+            ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "empty", "wall"],
+            ["empty", "lava", "lava", "lava", "lava", "lava", "lava", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "wall", "empty", "empty", "wall"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "wall"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "empty", "lava", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "wall", "empty", "wall", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "wall", "wall", "empty", "lava", "empty", "wall", "empty", "lava", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "lava", "empty", "lava", "empty"]
+        ]];
+    {% endif %}
+    {% if data == "easy" %}
+        mazes = [[
+            ["start", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["wall", "empty", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "empty"],
+            ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+            ["wall", "empty", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "empty"],
+            ["wall", "empty", "lava", "lava", "empty", "empty", "empty", "empty", "lava", "empty"],
+            ["wall", "empty", "lava", "lava", "empty", "wall", "wall", "empty", "wall", "wall"],
+            ["lava", "empty", "empty", "wall", "empty", "lava", "empty", "empty", "empty", "empty"],
+            ["lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty"],
+            ["lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty"],
+            ["lava", "lava", "lava", "lava", "goal", "lava", "empty", "empty", "empty", "empty"]
+        ], [
+            ["start", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "wall", "empty", "lava", "lava", "lava", "wall", "wall", "wall", "wall"],
+            ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "lava", "lava", "lava", "empty", "lava", "empty"],
+            ["empty", "lava", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "lava", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "lava", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "lava", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+            ["empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "wall", "empty"],
+            ["empty", "wall", "wall", "wall", "wall", "empty", "empty", "empty", "wall", "goal"]
+        ], [
+            ["start", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "wall", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "wall", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "goal", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "wall"],
+            ["empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "wall"],
+            ["empty", "wall", "wall", "wall", "lava", "lava", "lava", "lava", "empty", "wall"],
+            ["empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall"]
+        ]];
+    {%  endif %}
 
     //fill maze with one of sample mazes
     async function setValues() {
         let values = mazes[Math.floor(Math.random() * 10) % 3];
-        for (let i = 0; i < 20; i++) {
-            for (let j = 0; j < 20; j++) {
-                let v = $(("#m-" + (i + 1) + "-" + (j + 1))).find("i");
+        //fm.text("");
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                let v = $((sizepid + (i + 1) + "-" + (j + 1))).find("i");
                 v.removeClass("fa-fire");
                 v.removeClass("fa-walking");
                 v.removeClass("fa-star");
@@ -831,12 +1263,15 @@
                 } else if (values[i][j] === "start") {
                     v.addClass("fa-walking");
                     v.css("color", "blue");
+                    pos[0]++;
                 } else if (values[i][j] === "portalstart") {
                     v.addClass("fa-dot-circle");
                     v.css("color", "magenta");
+                    pin[0] = true;
                 } else if (values[i][j] === "portalend") {
                     v.addClass("fa-circle");
                     v.css("color", "orange");
+                    pin[0] = true;
                 }
                 await sleep(20);
             }
@@ -850,26 +1285,27 @@
 
     //get result data = way, cost, space and then show it on the html
     async function paintTheWay(data) {
-        let way = data[0];
-        if (!way) {
-            for (let k = 1; k < 21; k++) {
-                for (let m = 1; m < 21; m++) {
-                    $(("#m-" + k + "-" + m)).css("background-color", "darkred");
-                    $(("#m-" + k + "-" + m)).find("i").css("color", "white");
+        if (data === null) {
+            for (let k = 1; k < size + 1; k++) {
+                for (let m = 1; m < size + 1; m++) {
+                    $((sizepid + k + "-" + m)).css("background-color", "darkred");
+                    $((sizepid + k + "-" + m)).find("i").css("color", "white");
                     await sleep(5);
                 }
             }
-            $("#fm").text("Couldn't find any path to goal");
+            fm.text("Couldn't find any path to goal");
+            fm.addClass("fail-message");
 
         } else {
+            let way = data[0];
             let index = [1, 1];
-            let curr = $("#m-1-1");
+            let curr = $(sizepid + "1-1");
             curr.addClass("true-way");
             for (let i = 0; i < way.length; i++) {
                 if (way[i] === "east") {
                     index = [index[0] + 1, index[1]];
                     curr.find("i").removeClass("fa-walking");
-                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
                     curr.find("i").removeClass("fa-dot-circle");
                     curr.find("i").addClass("fa-walking");
@@ -877,7 +1313,7 @@
                 } else if (way[i] === "west") {
                     index = [index[0] - 1, index[1]];
                     curr.find("i").removeClass("fa-walking");
-                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
                     curr.find("i").removeClass("fa-dot-circle");
                     curr.find("i").addClass("fa-walking");
@@ -885,24 +1321,23 @@
                 } else if (way[i] === "north") {
                     index = [index[0], index[1] - 1];
                     curr.find("i").removeClass("fa-walking");
-                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
                     curr.find("i").removeClass("fa-dot-circle");
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else if (way[i].includes("teleport")) {
                     let ports = way[i].split("-");
-                    index = [ports[1] + 1, ports[2] + 1];
+                    index = [parseInt(ports[1]) + 1, parseInt(ports[2]) + 1];
                     curr.find("i").removeClass("fa-walking");
-                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
-                    curr.find("i").removeClass("fa-circle");
                     curr.find("i").addClass("fa-walking");
                     curr.find("i").css("color", "blue");
                 } else {
                     index = [index[0], index[1] + 1];
                     curr.find("i").removeClass("fa-walking");
-                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr = $((sizepid + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
                     curr.find("i").removeClass("fa-dot-circle");
                     curr.find("i").addClass("fa-walking");
@@ -910,28 +1345,25 @@
                 }
                 await sleep(300);
             }
-            $("#fm").text("You reached to goal. Cost:" + data[1] + ", Space complexity" + data[2]);
+            fm.text("You reached to goal. Cost: " + data[1] + ", Space complexity: " + data[2]);
+            fm.addClass("fail-message");
         }
     }
 
     function bfs() {
         let g = getValues();
-
         if (g !== false) {
-            let data = new Bfs(g).search(); //bfs call 3lü array -> sağ sol bilgisi, cost, space
+            let data = new Bfs(g).search();
             paintTheWay(data);
         }
-
     }
 
     function astar() {
         let g = getValues();
-
         if (g !== false) {
-            let data = new Astar(g).search();   //astar call 3lü array  -> sağ sol bilgisi, cost, space
+            let data = new Astar(g).search();
             paintTheWay(data);
         }
-
     }
 </script>
 </body>
