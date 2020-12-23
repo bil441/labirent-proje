@@ -79,6 +79,10 @@ class PriorityQueue {
         return this.items.length == 0;
     }
 
+    qlength(){
+        return this.items.length;
+    }
+
     printPQueue()
     {
     var str = "";
