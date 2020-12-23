@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.secret_key = "hello"
-difficulty = "medium"
+difficultyGlob = "medium"
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -41,9 +41,11 @@ def settings():
         val = request.form["switch"]
         print(val)
         diff = val
+        global difficultyGlob
+        difficultyGlob = val
         return render_template("settings.html", data=diff)
     else:
-        return render_template("settings.html", data=difficulty)
+        return render_template("settings.html", data=difficultyGlob)
 
 
 if __name__ == '__main__':
