@@ -19,7 +19,7 @@ var findShortestPath = function (coordinates, grid) {
         var currentLocation = queue.shift();    //QUEUE NUN ILK ELEMANINI AL
 
         // DOGUYA BAK
-        var newLocation = exploreInDirection(currentLocation, 'East', grid);
+        var newLocation = exploreInDirection(currentLocation, 'east', grid);
         if (newLocation.status === 'goal') {
             return newLocation.path;
         } else if (newLocation.status === 'valid') {
@@ -27,7 +27,7 @@ var findShortestPath = function (coordinates, grid) {
         }
 
         // GUNEYE BAK
-        var newLocation = exploreInDirection(currentLocation, 'South', grid);
+        var newLocation = exploreInDirection(currentLocation, 'south', grid);
         if (newLocation.status === 'goal') {
             return newLocation.path;
         } else if (newLocation.status === 'valid') {
@@ -35,7 +35,7 @@ var findShortestPath = function (coordinates, grid) {
         }
 
         // BATIYA BAK
-        var newLocation = exploreInDirection(currentLocation, 'West', grid);
+        var newLocation = exploreInDirection(currentLocation, 'west', grid);
         if (newLocation.status === 'goal') {
             return newLocation.path;
         } else if (newLocation.status === 'valid') {
@@ -43,7 +43,7 @@ var findShortestPath = function (coordinates, grid) {
         }
 
         // KUZEYE BAK
-        var newLocation = exploreInDirection(currentLocation, 'North', grid);
+        var newLocation = exploreInDirection(currentLocation, 'north', grid);
         if (newLocation.status === 'goal') {
             return newLocation.path;
         } else if (newLocation.status === 'valid') {
@@ -87,13 +87,13 @@ var exploreInDirection = function (currentLocation, direction, grid) {
     var dft = currentLocation.top;
     var dfl = currentLocation.left;
 
-    if (direction === 'North') {
+    if (direction === 'north') {
         dft -= 1;
-    } else if (direction === 'East') {
+    } else if (direction === 'east') {
         dfl += 1;
-    } else if (direction === 'South') {
+    } else if (direction === 'south') {
         dft += 1;
-    } else if (direction === 'West') {
+    } else if (direction === 'west') {
         dfl -= 1;
     }
 
@@ -113,7 +113,6 @@ var exploreInDirection = function (currentLocation, direction, grid) {
 };
 
 
-
 var size = 20;
 var grid = [];
 for (var i = 0; i < size; i++) {
@@ -123,12 +122,12 @@ for (var i = 0; i < size; i++) {
     }
 }
 
-startPoints = [0,0];
-goalPoints = [[19,3],[4,5]];
+startPoints = [0, 0];
+goalPoints = [[19, 3], [4, 5]];
 
 grid[startPoints[0]][startPoints[1]] = "start";
 
-for (var i=0; i<goalPoints.length; i++) {
+for (var i = 0; i < goalPoints.length; i++) {
     grid[goalPoints[i][0]][goalPoints[i][1]] = "goal";
 }
 

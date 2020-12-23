@@ -490,13 +490,34 @@
                 <label for="lava">Lava</label>
             </div>
         </div>
+        <div class="radio-toolbar radio-toolbar2 row">
+            <div class="col-md-4">
+                <input type="radio" id="portalin" name="block" value="portalin">
+                <label for="portalin">Portal In</label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" id="portalout" name="block" value="portalout">
+                <label for="portalout">Portal Out</label>
+            </div>
+            <div class="col-md-4">
+                <input type="radio" id="start" name="block" value="start">
+                <label for="start"></label>
+            </div>
+        </div>
     </div>
     <div class="options-container">
-        <div class="row m-2">
-            <button class="options-btn col-md-8 m-1">Start Solver</button>
+        <div class="row m-2" id="fm">
+            <p class="fail-message"></p>
         </div>
         <div class="row m-2">
-            <button class="options-btn col-md-8 m-1">New Maze</button>
+            <button class="options-btn col-md-8 m-1" onclick="showHide()">Start Solver</button>
+        </div>
+        <div id="solver" style="display: none" class="row m-2">
+            <button class="options-btn-2 m-1" onclick="bfs()">BFS</button>
+            <button class="options-btn-2 m-1" onclick="astar()">A*</button>
+        </div>
+        <div class="row m-2">
+            <button class="options-btn col-md-8 m-1" onclick="setValues()">New Maze</button>
         </div>
         <div class="row m-2">
             <button class="options-btn col-md-8 m-1" onclick="location.href ='/menu'">Home</button>
@@ -504,25 +525,58 @@
     </div>
 </div>
 <script>
-    var pos = [[0, 0], [0, 0], [0, 0]];
+    //shows or hide div on button click
+    function showHide() {
+        let x = document.getElementById("solver");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    //user fill matrix
+    let pos = [[0, 0], [0, 0], [0, 0]];
+    let pinc = [0, 0];
+    let pino = [0, 0];
     $(".clickable").click(function () {
-        var radioValue = $("input[name='block']:checked").val();
-        var c = $(this).find("i");
+        let radioValue = $("input[name='block']:checked").val();
+        let c = $(this).find("i");
         if (radioValue === "wall") {
             c.removeClass("fa-fire");
+            c.removeClass("fa-dot-circle");
+            c.removeClass("fa-star");
+            c.removeClass("fa-circle");
             c.toggleClass("fa-bars");
             c.css("color", "black");
         } else if (radioValue === "lava") {
-            c.removeClass("fa-bars")
+            c.removeClass("fa-bars");
+            c.removeClass("fa-dot-circle")
+            c.removeClass("fa-star");
+            c.removeClass("fa-circle");
             c.toggleClass("fa-fire");
             c.css("color", "firebrick");
+        } else if (radioValue === "portalin") {
+            c.removeClass("fa-fire");
+            c.removeClass("fa-bars");
+            c.removeClass("fa-star");
+            c.removeClass("fa-dot-circle");
+            c.toggleClass("fa-circle");
+            c.css("color", "orange");
+        } else if (radioValue === "portalout") {
+            c.removeClass("fa-fire");
+            c.removeClass("fa-bars");
+            c.removeClass("fa-star");
+            c.removeClass("fa-circle");
+            c.toggleClass("fa-dot-circle");
+            c.css("color", "magenta");
         } else if (radioValue === "goal") {
             if (pos[0][0] === 0 && pos[0][1] === 0) {
                 c.removeClass("fa-fire");
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p1 = $(this).attr("id").split("-");
+                let p1 = $(this).attr("id").split("-");
                 pos[0][0] = p1[1];
                 pos[0][1] = p1[2];
             } else if (pos[1][0] === 0 && pos[1][1] === 0) {
@@ -530,7 +584,7 @@
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p2 = $(this).attr("id").split("-");
+                let p2 = $(this).attr("id").split("-");
                 pos[1][0] = p2[1];
                 pos[1][1] = p2[2];
             } else if (pos[2][0] === 0 && pos[2][1] === 0) {
@@ -538,23 +592,238 @@
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p3 = $(this).attr("id").split("-");
+                let p3 = $(this).attr("id").split("-");
                 pos[2][0] = p3[1];
                 pos[2][1] = p3[2];
             } else {
-                var oldGoalId = "#m-" + pos[2][0] + "-" + pos[2][1];
-                var oldGoal = $(oldGoalId).find("i");
+                let oldGoalId = "#m-" + pos[2][0] + "-" + pos[2][1];
+                let oldGoal = $(oldGoalId).find("i");
                 oldGoal.removeClass("fa-star");
                 c.removeClass("fa-fire");
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p4 = $(this).attr("id").split("-");
+                let p4 = $(this).attr("id").split("-");
                 pos[2][0] = p4[1];
                 pos[2][1] = p4[2];
             }
         }
     });
+
+    // get values from divs and fill it into an double array
+    function getValues() {
+        let values = [];
+        for (let i = 1; i < 21; i++) {
+            let lineValues = [];
+            for (let j = 1; j < 21; j++) {
+                let v = document.getElementById(("m-" + i + "-" + j)).getElementsByClassName("fas")[0].classList;
+                if (v.length > 1) {
+                    let s = v[1];
+                    if (s === "fa-fire")
+                        lineValues.push("lava");
+                    else if (s === "fa-walking")
+                        lineValues.push("start");
+                    else if (s === "fa-bars")
+                        lineValues.push("wall")
+                    else if (s === "fa-star")
+                        lineValues.push("goal");
+                    else if (s === "fa-circle")
+                        lineValues.push("portalstart");
+                    else if (s === "fa-dot-circle")
+                        lineValues.push("portalend");
+                } else {
+                    lineValues.push("empty");
+                }
+            }
+            values.push(lineValues);
+        }
+        return values;
+    }
+
+    //sample mazes
+    var mazes = [[
+        ["start", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "lava", "lava"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "lava", "lava", "lava", "empty", "empty", "lava", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty", "empty", "lava", "empty", "empty"],
+        ["wall", "empty", "lava", "empty", "empty", "lava", "lava", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty"],
+        ["wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava"],
+        ["wall", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava", "lava", "lava", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["wall", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "wall", "lava", "lava", "empty", "empty", "empty", "goal"]
+    ], [
+        ["start", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "lava", "lava", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "lava", "lava", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty"],
+        ["empty", "wall", "wall", "empty", "lava", "empty", "wall", "wall", "wall", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "lava", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "wall", "wall", "wall", "empty"],
+        ["empty", "lava", "wall", "wall", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "lava"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "goal"]
+    ], [
+        ["start", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "lava", "lava", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "empty", "empty"],
+        ["empty", "empty", "wall", "wall", "wall", "wall", "empty", "lava", "wall", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "lava"],
+        ["empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty"],
+        ["empty", "empty", "lava", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "empty", "empty", "wall", "empty"],
+        ["empty", "empty", "lava", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "wall", "wall", "empty", "empty", "empty", "lava", "empty", "wall", "wall", "empty"],
+        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "wall", "wall", "empty", "wall", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "lava", "wall", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "lava", "lava", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "wall", "lava", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+        ["empty", "lava", "lava", "wall", "wall", "empty", "lava", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "empty", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "lava", "empty", "wall", "wall", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "wall", "lava", "empty", "wall", "empty", "wall", "empty", "empty", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "wall", "lava", "lava", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "lava", "empty"],
+        ["empty", "empty", "empty", "empty", "empty", "empty", "wall", "empty", "empty", "empty", "empty", "empty", "empty", "empty", "lava", "empty", "empty", "empty", "empty", "goal"]
+    ]];
+
+    //fill maze with one of sample mazes
+    async function setValues() {
+        let values = mazes[Math.floor(Math.random() * 10) % 3];
+        for (let i = 0; i < 20; i++) {
+            for (let j = 0; j < 20; j++) {
+                let v = $(("#m-" + (i + 1) + "-" + (j + 1))).find("i");
+                v.removeClass("fa-fire");
+                v.removeClass("fa-walking");
+                v.removeClass("fa-star");
+                v.removeClass("fa-bars");
+                v.removeClass("fa-circle");
+                v.removeClass("fa-dot-circle");
+                if (values[i][j] === "wall") {
+                    v.addClass("fa-bars");
+                    v.css("color", "black");
+                } else if (values[i][j] === "lava") {
+                    v.addClass("fa-fire");
+                    v.css("color", "firebrick");
+                } else if (values[i][j] === "goal") {
+                    v.addClass("fa-star");
+                    v.css("color", "gold");
+                } else if (values[i][j] === "start") {
+                    v.addClass("fa-walking");
+                    v.css("color", "blue");
+                } else if (values[i][j] === "portalstart") {
+                    v.addClass("fa-dot-circle");
+                    v.css("color", "magenta");
+                } else if (values[i][j] === "portalend") {
+                    v.addClass("fa-circle");
+                    v.css("color", "orange");
+                }
+                await sleep(20);
+            }
+        }
+    }
+
+    //custom sleep function
+    function sleep(ms) {
+        return new Promise(resolver => setTimeout(resolver, ms));
+    }
+
+    //get result data = way, cost, space and then show it on the html
+    async function paintTheWay(data) {
+        let way = data[0];
+        if (!way) {
+            for (let k = 1; k < 21; k++) {
+                for (let m = 1; m < 21; m++) {
+                    $(("#m-" + k + "-" + m)).css("background-color", "darkred");
+                    $(("#m-" + k + "-" + m)).find("i").css("color", "white");
+                    await sleep(5);
+                }
+            }
+            $("#fm").text("Couldn't find any path to goal");
+
+        } else {
+            let index = [1, 1];
+            let curr = $("#m-1-1");
+            curr.addClass("true-way");
+            for (let i = 0; i < way.length; i++) {
+                if (way[i] === "east") {
+                    index = [index[0], index[1] + 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").removeClass("fa-dot-circle");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "west") {
+                    index = [index[0], index[1] - 1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").removeClass("fa-dot-circle");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i] === "north") {
+                    index = [index[0] - 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").removeClass("fa-dot-circle");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else if (way[i].includes("teleport")) {
+                    let ports = way[i].split("-");
+                    index = [ports[1]+1,ports[2]+1];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").removeClass("fa-circle");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                } else {
+                    index = [index[0] + 1, index[1]];
+                    curr.find("i").removeClass("fa-walking");
+                    curr = $(("#m-" + index[0] + "-" + index[1]));
+                    curr.addClass("true-way");
+                    curr.find("i").removeClass("fa-dot-circle");
+                    curr.find("i").addClass("fa-walking");
+                    curr.find("i").css("color", "blue");
+                }
+                await sleep(300);
+            }
+            $("#fm").text("You reached to goal. Cost:" + data[1] + ", Space complexity" + data[2]);
+        }
+    }
+
+    function bfs() {
+        let g = getValues();
+        //let data = bfs call 3lü array -> sağ sol bilgisi, cost, space
+        paintTheWay(data);
+    }
+
+    function astar() {
+        let g = getValues();
+        //let data = astar call 3lü array  -> sağ sol bilgisi, cost, space
+        paintTheWay(data);
+    }
 </script>
 </body>
 </html>
