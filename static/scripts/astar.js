@@ -8,6 +8,8 @@ class Astar{
         var trgtlist = [];
 
         var cnt=0;
+        var portalflag=false;
+
 
         for(var x = 0, xl = strgrid.length; x < xl; x++) {
             this.grid[x] = [];
@@ -24,6 +26,7 @@ class Astar{
                 else if(strgrid[x][y]=='PortalStart'){
                     this.grid[x][y]= new Cell(x,y,false, false);
                     portalstart=this.grid[x][y];
+                    portalflag=true;
                 }
 
                 else if(strgrid[x][y]=='PortalEnd'){
@@ -51,7 +54,11 @@ class Astar{
         }
 
         this.targets = trgtlist;
-        this.portal = new Portal(portalstart, portalend);
+
+        if (!portalflag)
+            this.portal=null;
+        else
+            this.portal = new Portal(portalstart, portalend);
 
         console.log("cnt: " + cnt);
 
