@@ -6,7 +6,7 @@
     <link rel="icon"
           type="image/svg"
           href="../static/images/favicon.svg">
-
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
     <title>Game</title>
     <link
             rel="stylesheet"
@@ -490,7 +490,7 @@
                 <label for="lava">Lava</label>
             </div>
         </div>
-        <div class="radio-toolbar radio-toolbar2 row">
+        <div class="radio-toolbar2 row" style="margin-left: 5%;">
             <div class="col-md-4">
                 <input type="radio" id="portalin" name="block" value="portalin">
                 <label for="portalin">Portal In</label>
@@ -500,8 +500,8 @@
                 <label for="portalout">Portal Out</label>
             </div>
             <div class="col-md-4">
-                <input type="radio" id="start" name="block" value="start">
-                <label for="start"></label>
+                <input type="radio" id="portalout" name="block" value="portalout">
+                <label for="portalout" style=" height: 0px;"></label>
             </div>
         </div>
     </div>
@@ -536,108 +536,204 @@
     }
 
     //user fill matrix
-    let pos = [[0, 0], [0, 0], [0, 0]];
-    let pinc = [0, 0];
-    let pino = [0, 0];
-    $(".clickable").click(function () {
-        let radioValue = $("input[name='block']:checked").val();
-        let c = $(this).find("i");
-        if (radioValue === "wall") {
-            c.removeClass("fa-fire");
-            c.removeClass("fa-dot-circle");
-            c.removeClass("fa-star");
-            c.removeClass("fa-circle");
-            c.toggleClass("fa-bars");
-            c.css("color", "black");
-        } else if (radioValue === "lava") {
-            c.removeClass("fa-bars");
-            c.removeClass("fa-dot-circle")
-            c.removeClass("fa-star");
-            c.removeClass("fa-circle");
-            c.toggleClass("fa-fire");
-            c.css("color", "firebrick");
-        } else if (radioValue === "portalin") {
-            c.removeClass("fa-fire");
-            c.removeClass("fa-bars");
-            c.removeClass("fa-star");
-            c.removeClass("fa-dot-circle");
-            c.toggleClass("fa-circle");
-            c.css("color", "orange");
-        } else if (radioValue === "portalout") {
-            c.removeClass("fa-fire");
-            c.removeClass("fa-bars");
-            c.removeClass("fa-star");
-            c.removeClass("fa-circle");
-            c.toggleClass("fa-dot-circle");
-            c.css("color", "magenta");
-        } else if (radioValue === "goal") {
-            if (pos[0][0] === 0 && pos[0][1] === 0) {
+    let pos = [0, [0, 0], [0, 0], [0, 0]];
+    let pin = [false, [0, 0]];
+    let pou = [false, [0, 0]];
+    $(function () {
+        $(".clickable").click(function () {
+            let radioValue = $("input[name='block']:checked").val();
+            let c = $(this).find("i");
+            if (radioValue === "wall") {
+                if (c.hasClass("fa-dot-circle")) {
+                    pin[0] = false;
+                    c.removeClass("fa-dot-circle");
+                }
+                if (c.hasClass("fa-circle")) {
+                    pou[0] = false;
+                    c.removeClass("fa-circle");
+                }
+                if (c.hasClass("fa-star")) {
+                    pos[0]--;
+                    let d = c.parent().attr("id").split("-");
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === d[1] && pos[q][1] === d[2]) {
+                            c.removeClass("fa-star");
+                            pos[q] = [0, 0];
+                            break;
+                        }
+                    }
+                }
                 c.removeClass("fa-fire");
+                c.toggleClass("fa-bars");
+                c.css("color", "black");
+            } else if (radioValue === "lava") {
+                if (c.hasClass("fa-dot-circle")) {
+                    pin[0] = false;
+                    c.removeClass("fa-dot-circle");
+                }
+                if (c.hasClass("fa-circle")) {
+                    pou[0] = false;
+                    c.removeClass("fa-circle");
+                }
+                if (c.hasClass("fa-star")) {
+                    pos[0]--;
+                    let d = c.parent().attr("id").split("-");
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === d[1] && pos[q][1] === d[2]) {
+                            c.removeClass("fa-star");
+                            pos[q] = [0, 0];
+                            break;
+                        }
+                    }
+                }
                 c.removeClass("fa-bars");
-                c.addClass("fa-star");
-                c.css("color", "gold");
-                let p1 = $(this).attr("id").split("-");
-                pos[0][0] = p1[1];
-                pos[0][1] = p1[2];
-            } else if (pos[1][0] === 0 && pos[1][1] === 0) {
-                c.removeClass("fa-fire");
-                c.removeClass("fa-bars");
-                c.addClass("fa-star");
-                c.css("color", "gold");
-                let p2 = $(this).attr("id").split("-");
-                pos[1][0] = p2[1];
-                pos[1][1] = p2[2];
-            } else if (pos[2][0] === 0 && pos[2][1] === 0) {
-                c.removeClass("fa-fire");
-                c.removeClass("fa-bars");
-                c.addClass("fa-star");
-                c.css("color", "gold");
-                let p3 = $(this).attr("id").split("-");
-                pos[2][0] = p3[1];
-                pos[2][1] = p3[2];
-            } else {
-                let oldGoalId = "#m-" + pos[2][0] + "-" + pos[2][1];
-                let oldGoal = $(oldGoalId).find("i");
-                oldGoal.removeClass("fa-star");
-                c.removeClass("fa-fire");
-                c.removeClass("fa-bars");
-                c.addClass("fa-star");
-                c.css("color", "gold");
-                let p4 = $(this).attr("id").split("-");
-                pos[2][0] = p4[1];
-                pos[2][1] = p4[2];
+                c.toggleClass("fa-fire");
+                c.css("color", "firebrick");
+            } else if (radioValue === "portalin") {
+                if (c.hasClass("fa-star")) {// goal varsa goal sil
+                    pos[0]--;
+                    let d = c.parent().attr("id").split("-");
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === d[1] && pos[q][1] === d[2]) {
+                            c.removeClass("fa-star");
+                            pos[q] = [0, 0];
+                            break;
+                        }
+                    }
+                }
+                if (c.hasClass("fa-circle")) { // out varsa outu sil
+                    pou[0] = false;
+                    $("#m-" + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
+                }
+                if (c.hasClass("fa-dot-circle")) { // in varsa in silme için tıkladı in sil
+                    pin[0] = false;
+                    c.removeClass("fa-dot-circle");
+                } else {// in eklemek için tıkladı
+                    if (pin[0]) { // eski ini sil
+                        $("#m-" + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
+                    }
+                    pin[0] = true;
+                    let d = c.parent().attr("id").split("-");
+                    pin[1] = [d[1], d[2]];
+                    c.removeClass("fa-fire");
+                    c.removeClass("fa-bars");
+                    c.addClass("fa-dot-circle");
+                    c.css("color", "orange");
+                }
+            } else if (radioValue === "portalout") {
+                if (c.hasClass("fa-star")) {// goal varsa goal sil
+                    pos[0]--;
+                    let d = c.parent().attr("id").split("-");
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === d[1] && pos[q][1] === d[2]) {
+                            c.removeClass("fa-star");
+                            pos[q] = [0, 0];
+                            break;
+                        }
+                    }
+                }
+                if (c.hasClass("fa-dot-circle")) { // in varsa ini sil
+                    pin[0] = false;
+                    $("#m-" + pin[1][0] + "-" + pin[1][1]).find("i").removeClass("fa-dot-circle");
+                }
+                if (c.hasClass("fa-circle")) { // out varsa out silme için tıkladı out sil
+                    pou[0] = false;
+                    c.removeClass("fa-circle");
+                } else {// out eklemek için tıkladı
+                    if (pou[0]) { // eski outu sil
+                        $("#m-" + pou[1][0] + "-" + pou[1][1]).find("i").removeClass("fa-circle");
+                    }
+                    pou[0] = true;
+                    let d = c.parent().attr("id").split("-");
+                    pou[1] = [d[1], d[2]];
+                    c.removeClass("fa-fire");
+                    c.removeClass("fa-bars");
+                    c.addClass("fa-circle");
+                    c.css("color", "magenta");
+                }
+            } else if (radioValue === "goal") {
+                if (c.hasClass("fa-dot-circle")) { // in varsa sil
+                    pin[0] = false;
+                    c.removeClass("fa-dot-circle");
+                }
+                if (c.hasClass("fa-circle")) { // out varsa sil
+                    pou[0] = false;
+                    c.removeClass("fa-circle");
+                }
+                if (c.hasClass("fa-star")) {// goal varsa goal sil
+                    pos[0]--;
+                    let d = c.parent().attr("id").split("-");
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === d[1] && pos[q][1] === d[2]) {
+                            c.removeClass("fa-star");
+                            pos[q] = [0, 0];
+                            break;
+                        }
+                    }
+                } else if (pos[0] === 0) {
+                    c.removeClass("fa-bars");
+                    c.removeClass("fa-fire");
+                    pos[0]++;
+                    let d = c.parent().attr("id").split("-");
+                    pos[1] = [d[1], d[2]];
+                    c.addClass("fa-star");
+                    c.css("color", "gold");
+                } else if (pos[0] === 1 || pos[0] === 2) {
+                    for (let q = 1; q < 4; q++) {
+                        if (pos[q][0] === 0 && pos[q][1] === 0) {
+                            c.removeClass("fa-bars");
+                            c.removeClass("fa-fire");
+                            pos[0]++;
+                            let d = c.parent().attr("id").split("-");
+                            pos[q] = [d[1], d[2]];
+                            c.addClass("fa-star");
+                            c.css("color", "gold");
+                            break;
+                        }
+                    }
+                }
             }
-        }
+        });
     });
 
     // get values from divs and fill it into an double array
     function getValues() {
-        let values = [];
-        for (let i = 1; i < 21; i++) {
-            let lineValues = [];
-            for (let j = 1; j < 21; j++) {
-                let v = document.getElementById(("m-" + i + "-" + j)).getElementsByClassName("fas")[0].classList;
-                if (v.length > 1) {
-                    let s = v[1];
-                    if (s === "fa-fire")
-                        lineValues.push("lava");
-                    else if (s === "fa-walking")
-                        lineValues.push("start");
-                    else if (s === "fa-bars")
-                        lineValues.push("wall")
-                    else if (s === "fa-star")
-                        lineValues.push("goal");
-                    else if (s === "fa-circle")
-                        lineValues.push("portalstart");
-                    else if (s === "fa-dot-circle")
-                        lineValues.push("portalend");
-                } else {
-                    lineValues.push("empty");
-                }
-            }
-            values.push(lineValues);
+        let fm = $("#fm");
+        if ((pin[0] === true && pou[0] === false) || (pin[0] === false && pou[0] === true)) {
+            fm.text("Portal needs start and end points");
+            fm.addClass("fail-message");
         }
-        return values;
+        if (pos[0] === 0) {
+            fm.text("Please give at least one goal");
+            fm.addClass("fail-message");
+        } else {
+            let values = [];
+            for (let i = 1; i < 21; i++) {
+                let lineValues = [];
+                for (let j = 1; j < 21; j++) {
+                    let v = document.getElementById(("m-" + i + "-" + j)).getElementsByClassName("fas")[0].classList;
+                    if (v.length > 1) {
+                        let s = v[1];
+                        if (s === "fa-fire")
+                            lineValues.push("lava");
+                        else if (s === "fa-walking")
+                            lineValues.push("start");
+                        else if (s === "fa-bars")
+                            lineValues.push("wall")
+                        else if (s === "fa-star")
+                            lineValues.push("goal");
+                        else if (s === "fa-circle")
+                            lineValues.push("portalstart");
+                        else if (s === "fa-dot-circle")
+                            lineValues.push("portalend");
+                    } else {
+                        lineValues.push("empty");
+                    }
+                }
+                values.push(lineValues);
+            }
+            return values;
+        }
     }
 
     //sample mazes
@@ -791,7 +887,7 @@
                     curr.find("i").css("color", "blue");
                 } else if (way[i].includes("teleport")) {
                     let ports = way[i].split("-");
-                    index = [ports[1]+1,ports[2]+1];
+                    index = [ports[1] + 1, ports[2] + 1];
                     curr.find("i").removeClass("fa-walking");
                     curr = $(("#m-" + index[0] + "-" + index[1]));
                     curr.addClass("true-way");
