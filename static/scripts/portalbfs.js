@@ -1,4 +1,4 @@
-class bfs{
+class Bfs{
 
     constructor(strgrid) {
 
@@ -265,7 +265,7 @@ class Cell{
 
 }
 
-
+/*
 class Portal{
 
     constructor(start, end) {
@@ -273,3 +273,6 @@ class Portal{
         this.end=end;
     }
 }
+
+
+ */

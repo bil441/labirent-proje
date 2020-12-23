@@ -15,33 +15,33 @@ class Astar{
             for(var y = 0, yl = strgrid[0].length; y < yl; y++) {
 
                 if(strgrid[x][y]=='wall')
-                    this.grid[x][y]= new Cell(x,y,true, false);
+                    this.grid[x][y]= new Cell1(x,y,true, false);
 
                 else if(strgrid[x][y]=='empty'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                    this.grid[x][y]= new Cell1(x,y,false, false);
                 }
 
                 else if(strgrid[x][y]=='portalstart'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                    this.grid[x][y]= new Cell1(x,y,false, false);
                     portalstart=this.grid[x][y];
                     portalflag=true;
                 }
 
                 else if(strgrid[x][y]=='portalend'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                    this.grid[x][y]= new Cell1(x,y,false, false);
                     portalend=this.grid[x][y];
                 }
 
                 else if(strgrid[x][y]=='start'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                    this.grid[x][y]= new Cell1(x,y,false, false);
                     this.start=this.grid[x][y];
                 }
 
                 else if(strgrid[x][y]=='lava')
-                    this.grid[x][y]= new Cell(x,y,false, true);
+                    this.grid[x][y]= new Cell1(x,y,false, true);
 
                 else if(strgrid[x][y]=='goal'){
-                    this.grid[x][y]= new Cell(x,y,false, false);
+                    this.grid[x][y]= new Cell1(x,y,false, false);
                     trgtlist.push(this.grid[x][y]);
                 }
 
@@ -283,7 +283,8 @@ class Astar{
 
 }
 
-class Cell{
+
+class Cell1{
 
     constructor(xaxis, yaxis, wall, lava) {
         this.x=xaxis;
