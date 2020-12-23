@@ -540,7 +540,7 @@
     let pinc = [0, 0];
     let pino = [0, 0];
     $(".clickable").click(function () {
-        var radioValue = $("input[name='block']:checked").val();
+        let radioValue = $("input[name='block']:checked").val();
         let c = $(this).find("i");
         if (radioValue === "wall") {
             c.removeClass("fa-fire");
@@ -576,7 +576,7 @@
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p1 = $(this).attr("id").split("-");
+                let p1 = $(this).attr("id").split("-");
                 pos[0][0] = p1[1];
                 pos[0][1] = p1[2];
             } else if (pos[1][0] === 0 && pos[1][1] === 0) {
@@ -584,7 +584,7 @@
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p2 = $(this).attr("id").split("-");
+                let p2 = $(this).attr("id").split("-");
                 pos[1][0] = p2[1];
                 pos[1][1] = p2[2];
             } else if (pos[2][0] === 0 && pos[2][1] === 0) {
@@ -592,18 +592,18 @@
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p3 = $(this).attr("id").split("-");
+                let p3 = $(this).attr("id").split("-");
                 pos[2][0] = p3[1];
                 pos[2][1] = p3[2];
             } else {
-                var oldGoalId = "#m-" + pos[2][0] + "-" + pos[2][1];
-                var oldGoal = $(oldGoalId).find("i");
+                let oldGoalId = "#m-" + pos[2][0] + "-" + pos[2][1];
+                let oldGoal = $(oldGoalId).find("i");
                 oldGoal.removeClass("fa-star");
                 c.removeClass("fa-fire");
                 c.removeClass("fa-bars");
                 c.addClass("fa-star");
                 c.css("color", "gold");
-                var p4 = $(this).attr("id").split("-");
+                let p4 = $(this).attr("id").split("-");
                 pos[2][0] = p4[1];
                 pos[2][1] = p4[2];
             }
@@ -612,7 +612,7 @@
 
     // get values from divs and fill it into an double array
     function getValues() {
-        var values = [];
+        let values = [];
         for (let i = 1; i < 21; i++) {
             let lineValues = [];
             for (let j = 1; j < 21; j++) {
