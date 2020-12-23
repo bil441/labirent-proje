@@ -19,20 +19,20 @@
         <div class="diff-heading">
             <button class="diff-heading-btn" onclick="showhide()" id="diff-btn">Difficulty</button>
         </div>
-        <form action="">
+        <form action="#" method="post">
             <div style="display: none" id="diff-options">
                 <div class="switch">
-                    <input name="switch" id="one" type="radio" value="easy" checked/>
+                    <input name="switch" id="one" type="radio" value="easy" {% if data == "easy" %} checked {% endif %} />
                     <label for="one" class="switch__label">Easy</label>
-                    <input name="switch" id="two" type="radio" value="medium"/>
+                    <input name="switch" id="two" type="radio" value="medium" {% if data == "medium" %} checked {% endif %}/>
                     <label for="two" class="switch__label">Medium</label>
-                    <input name="switch" id="three" type="radio" value="hard"/>
+                    <input name="switch" id="three" type="radio" value="hard" {% if data == "hard" %} checked {% endif %}/>
                     <label for="three" class="switch__label">Hard</label>
                     <div class="switch__indicator"/>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <button class="diff-submit" type="submit">Save</button>
+                <button class="diff-submit" type="submit" name="save">Save</button>
             </div>
         </form>
     </div>
